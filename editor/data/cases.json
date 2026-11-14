@@ -1,0 +1,488 @@
+{
+  "earth": {
+    "id": "earth",
+    "caseId": "earth",
+    "title": "Nuugaatsiaq, Greenland",
+    "context": "Earth · retrospective rover inspection",
+    "product": "ArcticDEM strip · stereo surface",
+    "surface": "ground",
+    "W": 250,
+    "H": 250,
+    "res": 2,
+    "grid": {
+      "east": -288378,
+      "north": -1996122,
+      "crs": "EPSG:3413 · WGS84 / NSIDC Polar Stereographic North"
+    },
+    "files": {
+      "ground": "nuugaatsiaq-heights.f32"
+    },
+    "range": [
+      8.5,
+      40.9375
+    ],
+    "date": "19 June 2017 imagery",
+    "qualityFile": "nuugaatsiaq-mask.u8",
+    "qualityKind": "arcticdem-bitmask",
+    "matchtagFile": "nuugaatsiaq-matchtag.u8",
+    "heightOrigin": "undocumented",
+    "origin": "Stereo-derived surface heights. The supplied matchtag separately identifies stereo-matched (1) and interpolated (0) cells; it does not identify donor heights or establish accuracy.",
+    "productionMethod": "SETSM stereo reconstruction; native 2 m strip samples",
+    "productionScope": "500 × 500 m native crop; DSM includes buildings and other surface objects, not guaranteed bare earth.",
+    "quality": "Supplied edge/water/cloud bitmask and separate stereo matchtag; categorical indicators, not numerical uncertainty.",
+    "history": "Image acquisition 19 June 2017; constituent scenes processed in 2018, strip created 7 November 2021, generated 9 June 2022 and published 19 October 2022. This product is not established as available during the 2017 response.",
+    "credit": "Polar Geospatial Center / ArcticDEM · Porter et al. (2022)",
+    "datum": "WGS84 ellipsoidal height, metres",
+    "sourceURL": "https://stac.pgc.umn.edu/api/v1/collections/arcticdem-strips-s2s041-2m/items/SETSM_s2s041_WV01_20170619_10200100629F4B00_102001006157B200_2m_lsf_seg2",
+    "sourceURLs": {
+      "dem": "https://pgc-opendata-dems.s3.us-west-2.amazonaws.com/arcticdem/strips/s2s041/2m/n71w054/SETSM_s2s041_WV01_20170619_10200100629F4B00_102001006157B200_2m_lsf_seg2_dem.tif",
+      "mask": "https://pgc-opendata-dems.s3.us-west-2.amazonaws.com/arcticdem/strips/s2s041/2m/n71w054/SETSM_s2s041_WV01_20170619_10200100629F4B00_102001006157B200_2m_lsf_seg2_bitmask.tif",
+      "matchtag": "https://pgc-opendata-dems.s3.us-west-2.amazonaws.com/arcticdem/strips/s2s041/2m/n71w054/SETSM_s2s041_WV01_20170619_10200100629F4B00_102001006157B200_2m_lsf_seg2_matchtag.tif",
+      "metadata": "https://pgc-opendata-dems.s3.us-west-2.amazonaws.com/arcticdem/strips/s2s041/2m/n71w054/SETSM_s2s041_WV01_20170619_10200100629F4B00_102001006157B200_2m_lsf_seg2_mdf.txt",
+      "readme": "https://pgc-opendata-dems.s3.us-west-2.amazonaws.com/arcticdem/strips/s2s041/2m/n71w054/SETSM_s2s041_WV01_20170619_10200100629F4B00_102001006157B200_2m_lsf_seg2_readme.txt"
+    },
+    "metadata": {
+      "license": "CC BY 4.0",
+      "precision": "No per-cell numeric uncertainty supplied",
+      "scope": "Supplied categorical evidence; zero mask is not a guarantee of accuracy.",
+      "processing": "Scenes: January–February 2018 · strip: November 2021 · packaging/publication: 2022",
+      "timing": "19 June 2017, 18:25:50–18:26:36 UTC imagery. Present product availability does not establish 2017 operational availability.",
+      "qualityGuide": "https://www.pgc.umn.edu/guides/stereo-derived-elevation-models/pgc-dem-products-arcticdem-rema-and-earthdem/",
+      "nativeGrid": "250 × 250 cells at native 2 m posting; Hallmark crop applies no resampling, smoothing, filling or vertical offset; upstream SETSM smoothing remains part of the source product.",
+      "endpointStatus": "Hallmark-selected illustrative endpoints on the southern settlement peninsula. Checked against published settlement aerial/topographic maps (Strzelecki & Jaskólski 2020, figures 1 and 3) and the downloaded OpenStreetMap coastline context (5 November 2026). These are not a documented rescue route, surveyed clearance, road-following constraint or rover capability claim.",
+      "sourceNoData": "DEM −9999; all 62,500 crop heights finite. Mask value 1 is an edge bit; matchtag 0 is retained as interpolated evidence."
+    },
+    "focus": [
+      110,
+      100
+    ],
+    "proposalStart": {
+      "row": 110,
+      "col": 100
+    },
+    "proposalGoal": {
+      "row": 165,
+      "col": 80
+    },
+    "flagCell": {
+      "row": 165,
+      "col": 78
+    },
+    "scenario": {
+      "responseURL": "https://www.forsvaret.dk/da/nyheder/2017/flodbolge-i-uummannaq-fjorden2/",
+      "contextURL": "https://nhess.copernicus.org/articles/20/2521/2020/"
+    }
+  },
+  "atami": {
+    "id": "atami",
+    "caseId": "atami",
+    "title": "Izuyama, Atami, Japan",
+    "context": "Earth · rescue robotics",
+    "W": 125,
+    "H": 125,
+    "res": 1,
+    "contextPhoto": {
+      "file": "../../fixtures/earth/atami-imagery/atami-headscarp.jpg",
+      "thumbnail": "../../fixtures/earth/atami-imagery/atami-headscarp-preview.jpg",
+      "bounds": {
+        "west": 51993.90988107122,
+        "north": -97135.95518412748,
+        "east": 52333.55988107122,
+        "south": -97411.75518412748
+      },
+      "date": "3 July 2021",
+      "credit": "Shizuoka Point Cloud Support Team / CrisisMappers Japan",
+      "sourceURL": "https://www.geospatial.jp/ckan/dataset/atami20210703izusan0000shizuokapref01"
+    },
+    "files": {
+      "july3-dsm": "atami-july03-dsm-1m-pixel-center-median.f32",
+      "ground": "atami-ground-1m-median.f32"
+    },
+    "surveys": {
+      "ground": {
+        "product": "Windy Network ground-filtered drone LiDAR",
+        "label": "5–6 July · Ground lidar",
+        "grid": {
+          "east": 52100,
+          "north": -97221,
+          "crs": "LAS CRS omitted; Japanese Plane Rectangular CS VIII (EPSG:6676) assumed for alignment to the DSM"
+        },
+        "surface": "ground",
+        "comparisonSurfaceId": "july3-dsm",
+        "comparisonLabel": "5–6 July lidar ground",
+        "heightOrigin": "observed",
+        "groundRGBFile": "atami-ground-rgb.u8",
+        "groundCountsFile": "atami-ground-counts.u16",
+        "proposalHeightsFile": "atami-july03-dsm-1m-pixel-center-median.f32",
+        "gapCell": {
+          "row": 40,
+          "col": 42
+        },
+        "range": [
+          345.2879943847656,
+          410.2380065917969
+        ],
+        "date": "5–6 July 2021",
+        "productionMethod": "Hallmark median gridding of the released July 5–6 ground-filtered LAS points",
+        "productionScope": "Retrospective 1 m crop derived for the prototype",
+        "credit": "Windy Network · Shizuoka Prefecture open data",
+        "datum": "Metres; vertical datum not specified in the LAS archive",
+        "origin": "Hallmark records the median and number of ground lidar returns in each 1 m square. Zero returns leave a missing height. Per-cell height uncertainty was not supplied.",
+        "quality": "Ground-return support counts computed from the released ground-filtered point cloud; no per-cell accuracy supplied.",
+        "history": "Hallmark retrospectively bins the released July 5–6 ground-filtered LAS points into 1 m squares and uses each occupied cell’s median height. Empty bins remain missing (NaN); no elevations are filled. Counts are the number of source points in each square, not an accuracy estimate.",
+        "sourceURL": "https://opendata.pref.shizuoka.jp/dataset/8698.html",
+        "sourceURLs": {
+          "ground": "https://gsic-opendata.s3.ap-northeast-1.amazonaws.com/local-gov/shizuoka/point-cloud/2021/20210703-atami-dronealb/20210703ATAMI/Izusan_UAV-LiDAR_20210706_Ground.zip"
+        },
+        "metadata": {
+          "colour": "Mean of the supplied RGB channels of the ground points in each 1 m cell. Cells with zero returns have no measured colour.",
+          "pointSupport": "Per-cell counts are computed from the released ground-filtered points. They describe this later survey’s local support only.",
+          "gridding": "Hallmark median of source ground-point elevations per 1 m square; west/south edges included, east/north edges excluded.",
+          "crsStatus": "The LAS header contains no CRS record. EPSG:6676 is an explicit co-registration assumption based on coordinate overlap with the georeferenced DSM, not a verified LAS CRS.",
+          "sourceLicense": "CC BY 4.0 / ODbL as stated by the Shizuoka Prefecture publisher.",
+          "missingValues": "Cells with no ground points are NaN; no interpolation or gap filling."
+        },
+        "proposalSource": {
+          "product": "3 July 2021 drone-derived digital surface model (DSM)",
+          "date": "3 July 2021",
+          "url": "https://www.geospatial.jp/ckan/dataset/atami20210703izusan0000shizuokapref01",
+          "downloadUrl": "https://www.geospatial.jp/ckan/dataset/450bb3a3-7685-4758-a224-e2cd899f61a8/resource/44764141-9119-4551-8762-3f447088a85a/download/izusanls10cmdemtrim.tif",
+          "credit": "Shizuoka Point Cloud Support Team · distributed by CrisisMappers Japan",
+          "method": "Median of finite 0.10 m DSM pixel-centre samples whose centres fall inside each 1 m square; NoData pixels are excluded and empty cells remain NaN.",
+          "surface": "DSM includes vegetation and objects; it is a separate earlier survey and is not the July 5–6 ground model.",
+          "sourceLicense": "CC BY 4.0 / ODbL as stated by the publisher.",
+          "sourceSha256": "d7141217427fa15a66d3682d20637d1cb6504ae24cc01557123ad1aab981e804",
+          "crs": "EPSG:6676, JGD2011 / Japan Plane Rectangular CS VIII, as declared in the DSM GeoTIFF.",
+          "registration": "The LAS header omits CRS. Shared local coordinates are assumed for alignment based on the documented overlap; LAS CRS is not verified.",
+          "history": "Independent reconstruction from 3 July footage; DSM resource registered 5 July. Same-day availability to responders is unverified. This legacy proposal layer is retained as separate-survey context and does not fill missing ground-lidar cells."
+        },
+        "focus": [
+          40,
+          42
+        ],
+        "proposalStart": {
+          "row": 15,
+          "col": 42
+        },
+        "proposalGoal": {
+          "row": 85,
+          "col": 87
+        }
+      },
+      "july3-dsm": {
+        "surface": "july3-dsm",
+        "comparisonSurfaceId": "ground",
+        "comparisonLabel": "3 July video surface",
+        "product": "Drone-video-derived digital surface model (DSM)",
+        "label": "3 July · Video surface",
+        "date": "3 July 2021",
+        "grid": {
+          "east": 52100,
+          "north": -97221,
+          "crs": "EPSG:6676 · JGD2011 / Japan Plane Rectangular CS VIII (declared by source DSM)"
+        },
+        "range": [
+          345.58941650390625,
+          408.03399658203125
+        ],
+        "focus": [
+          15,
+          42
+        ],
+        "proposalStart": {
+          "row": 15,
+          "col": 42
+        },
+        "proposalGoal": {
+          "row": 85,
+          "col": 87
+        },
+        "heightOrigin": "undocumented",
+        "dsmSampleCountsFile": "atami-july03-dsm-sample-counts.u16",
+        "groundRGBFile": "atami-july03-orthophoto-1m-rgb.u8",
+        "productionMethod": "Hallmark median aggregation of valid 10 cm source DSM pixel-centre samples into 1 m squares",
+        "productionScope": "Retrospective 125 × 125 m crop of the independent 3 July DSM",
+        "credit": "Shizuoka Point Cloud Support Team · distributed by CrisisMappers Japan",
+        "datum": "Metres; vertical datum not specified in the cited DSM source metadata",
+        "origin": "Hallmark retains the median of valid source DSM pixel-centre elevations in each 1 m square. The source reconstruction ancestry and per-cell uncertainty are not supplied. Valid source-pixel counts describe aggregation inputs, not lidar returns or accuracy.",
+        "quality": "No source per-cell quality mask or accuracy estimate supplied. DSM sample counts only count valid aggregation inputs.",
+        "history": "Independent reconstruction from footage captured 3 July 2021; DSM resource registered 5 July. Same-day availability to responders is unverified. Hallmark aggregates the retained source DSM samples without filling, smoothing or importing lidar heights. This DSM includes surface objects and vegetation; it is not a ground model. Native gaps remain NaN.",
+        "sourceURL": "https://www.geospatial.jp/ckan/dataset/atami20210703izusan0000shizuokapref01",
+        "sourceURLs": {
+          "july3-dsm": "https://www.geospatial.jp/ckan/dataset/450bb3a3-7685-4758-a224-e2cd899f61a8/resource/44764141-9119-4551-8762-3f447088a85a/download/izusanls10cmdemtrim.tif"
+        },
+        "metadata": {
+          "colour": "3 July orthophoto JPEG pixel containing each 1 m cell centre. These independent display colours do not add height measurements or identify land cover; no lidar RGB is used.",
+          "dsmSampleSupport": "Counts of finite, non-NoData 10 cm source DSM pixel centres in each 1 m square. They do not measure source image support, accuracy or per-cell uncertainty.",
+          "gridding": "Median of finite, non-NoData source DSM pixel-centre samples in each 1 m square; west/south edges included, east/north edges excluded. Source NoData is -32767.",
+          "sourceResolution": "0.10 m source DSM pixel spacing; 1 m output aggregation grid.",
+          "sourceOrigin": "Source pixel-corner origin E 52046.98237225347, N -97220.5039069222; signed pixel spacing 0.10000000000000198, -0.10000000000000192 m; retained window starts at source column 530, row 5.",
+          "crsStatus": "The source DSM declares EPSG:6676. The companion LAS omits CRS; same-location comparison assumes its shared local coordinates align with the DSM and does not verify that alignment.",
+          "sourceLicense": "CC BY 4.0 / ODbL as stated by publisher",
+          "missingValues": "No valid source DSM samples means NaN and zero sample count; no interpolation or gap filling.",
+          "sourceSha256": "d7141217427fa15a66d3682d20637d1cb6504ae24cc01557123ad1aab981e804",
+          "timing": "Drone footage captured 3 July 2021; DSM resource registered 5 July. Same-day availability to responders unverified."
+        }
+      }
+    }
+  },
+  "blatten": {
+    "id": "blatten",
+    "caseId": "blatten",
+    "title": "Tennmatten, Blatten, Switzerland",
+    "context": "Earth · retrospective terrain inspection",
+    "product": "swissALTI3D · pre-collapse ground baseline",
+    "surface": "ground",
+    "surveyPhase": "pre-event",
+    "heightOrigin": "undocumented",
+    "W": 200,
+    "H": 200,
+    "res": 2,
+    "grid": {
+      "east": 2627500,
+      "north": 1140200,
+      "crs": "EPSG:2056 · CH1903+ / LV95"
+    },
+    "files": {
+      "ground": "blatten-ground.f32",
+      "post-event": "blatten-20250530-dsm.f32"
+    },
+    "range": [
+      1420.7855224609375,
+      1589.2987060546875
+    ],
+    "date": "2024 product edition · survey date unverified",
+    "credit": "Federal Office of Topography swisstopo",
+    "datum": "LN02 height (EPSG:5728), metres",
+    "productionMethod": "Exact native 2 m samples cropped from two standard swissALTI3D tiles",
+    "productionScope": "400 × 400 m pre-collapse baseline; no post-event deposit heights",
+    "origin": "Native production grid samples; underlying survey dependencies and per-cell uncertainty are not supplied in this fixture.",
+    "quality": "No per-cell quality or survey support mask supplied. All 40,000 crop cells have finite source elevations.",
+    "history": "The 2024 archive edition precedes the 28 May 2025 collapse. Hallmark concatenates adjoining native grid windows without resampling, smoothing, interpolation or gap filling. The year is the product edition, not a verified survey date.",
+    "sourceURL": "https://www.swisstopo.admin.ch/en/height-model-swissalti3d",
+    "sourceURLs": {
+      "northTile": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2627-1140/swissalti3d_2024_2627-1140_2_2056_5728.tif",
+      "southTile": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2627-1139/swissalti3d_2024_2627-1139_2_2056_5728.tif"
+    },
+    "metadata": {
+      "sourceLicense": "Standard swisstopo open government data: use, distribution, processing and commercial use permitted with attribution. Not a Rapid Mapping product or derivative.",
+      "edition": 2024,
+      "surveyDate": "Not verified",
+      "eventRelation": "Pre-collapse baseline, before the 28 May 2025 Blatten collapse. Does not represent the deposit or current traversability.",
+      "sourceNoData": -9999,
+      "missingValues": "No NoData cells in this crop; missing source cells would remain missing.",
+      "nativeGrid": "200 × 200 native 2 m samples, row-major north to south, west to east.",
+      "cropSha256": "521fb942ce32ae73122b2a5651c5cd615b44db44dd1b75e0acfaddba9b984e16",
+      "endpointStatus": "Illustrative inspection endpoints chosen for demonstration, not sourced responder positions or a validated rescue route."
+    },
+    "focus": [
+      98,
+      106
+    ],
+    "proposalStart": {
+      "row": 171,
+      "col": 45
+    },
+    "proposalGoal": {
+      "row": 50,
+      "col": 145
+    },
+    "surveys": {
+      "post-event": {
+        "product": "Schmauß · photogrammetric surface model v2",
+        "date": "30 May 2025",
+        "surveyPhase": "post-event",
+        "files": {
+          "post-event": "blatten-20250530-dsm.f32"
+        },
+        "groundRGBFile": "blatten-20250530-rgb.u8",
+        "W": 400,
+        "H": 400,
+        "res": 1.000040000000072,
+        "grid": {
+          "east": 2627500.0954160155,
+          "north": 1140200.3648084807,
+          "crs": "EPSG:2056 · CH1903+ / LV95"
+        },
+        "range": [
+          1440.854248046875,
+          1598.7161865234375
+        ],
+        "heightOrigin": "undocumented",
+        "productionMethod": "Metashape reconstruction from 30 May oblique aerial photographs",
+        "productionScope": "Published 1 m surface raster v2. Hallmark extracts native cells.",
+        "origin": "Per-cell stereo matches, interpolation history and accuracy are not supplied.",
+        "quality": "No per-cell quality flags or calibrated uncertainty supplied.",
+        "datum": "Metres; reconstruction aligned to swissALTI3D, vertical datum not specified in the author’s file.",
+        "credit": "Simeon Schmauß - created from BAFU/swisstopo Rapid Mapping oblique imagery, CC BY 4.0. Source: FOEN, swisstopo.",
+        "sourceURL": "https://drive.google.com/file/d/1VLut72e4zpnU5xSD8tnQBTNI021GGKkl/view",
+        "history": "The author georeferenced the reconstruction to swissALTI3D and SWISSIMAGE. Vegetation and structures remain in the surface.",
+        "focus": [
+          197,
+          212
+        ],
+        "proposalStart": {
+          "row": 343,
+          "col": 90
+        },
+        "proposalGoal": {
+          "row": 101,
+          "col": 290
+        },
+        "metadata": {
+          "surveyControl": "18 manually placed ground control points",
+          "positionalResidual": "1.6 m average positional error at controls (whole reconstruction)",
+          "missingValues": "All 160,000 native elevations in this crop are finite. Coverage does not establish surface stability.",
+          "colour": "30 May federal orthophoto, averaged into each native surface cell for display.",
+          "sourceLicense": "CC BY 4.0 · Simeon Schmauß (reconstruction). Source: FOEN, swisstopo (imagery).",
+          "cropSha256": "dce94fc2a386906537465b6e27703c02bba8d6c8655b1253650966e23685e5ef",
+          "temporalContext": "The surface survey supplies no measurement of buried water or load-bearing strength.",
+          "licenseURL": "https://creativecommons.org/licenses/by/4.0/",
+          "methodsURL": "https://docs.google.com/document/d/12vx7Han8xQMpate9QUdXkMHgcBfkpXxJn0F6ctbs79Y/edit"
+        },
+        "assets": {
+          "heightSha256": "dce94fc2a386906537465b6e27703c02bba8d6c8655b1253650966e23685e5ef",
+          "rgbSha256": "0776d5f4f8b46cea70dd36a6120272c13596517970a7b96790aff539a30866d6",
+          "sourceHeightSha256": "45807ff2a7cfc1d6a6cc68ba90d7c37755b0fd886f241cfa1fc3fdb86fadc67c",
+          "window": [
+            2582,
+            3290,
+            400,
+            400
+          ],
+          "sourceNoData": -32767,
+          "affine": [
+            2627500.0954160155,
+            1.000040000000072,
+            0,
+            1140200.3648084807,
+            0,
+            -1.0000399999999925
+          ],
+          "rgbSource": "https://data.geo.admin.ch/ch.swisstopo.spezialbefliegungen/ram-2025-05-30t08090000/ram-2025-05-30t08090000-rgb-mosaic.tif"
+        },
+        "contextPhoto": {
+          "title": "Blatten · Tennmatten and the debris deposit",
+          "file": "../../fixtures/earth/blatten-event/tennmatten-30may.jpg",
+          "thumbnail": "../../fixtures/earth/blatten-event/tennmatten-preview.jpg",
+          "bounds": {
+            "west": 2627250,
+            "east": 2628250,
+            "north": 1140350,
+            "south": 1139650
+          },
+          "date": "30 May 2025",
+          "credit": "Source: FOEN, swisstopo",
+          "sourceURL": "https://www.swisstopo.admin.ch/en/rapidmapping-news-en-20261021",
+          "fullViewLabel": "Open photograph"
+        }
+      }
+    }
+  },
+  "moon": {
+    "id": "moon",
+    "title": "North of Nassau crater",
+    "context": "Moon · rover exploration",
+    "product": "NAC_DTM_NASSAU02 v1.9",
+    "W": 256,
+    "H": 256,
+    "res": 4,
+    "files": {
+      "ground": "nassau.f32"
+    },
+    "qualityFile": "nassau-quality.u8",
+    "qualityReadmeURL": "../fixtures/lroc/nassau02-belief-candidate/NAC_DTM_NASSAU02_README.TXT",
+    "range": [
+      -346.3224182128906,
+      -95.6082534790039
+    ],
+    "date": "1 August 2022",
+    "credit": "NASA / GSFC / Arizona State University",
+    "datum": "Relative to lunar radius 1,737,400 m",
+    "origin": "Earlier per-cell history not supplied",
+    "quality": "LROC reconstruction quality codes",
+    "history": "Code 3: suspicious (edge, corner, did not correlate, etc.). Codes 10–14: successful correlation. These categories are not calibrated error probabilities or accuracy guarantees.",
+    "sourceURL": "https://data.lroc.im-ldi.com/lroc/view_rdr/NAC_DTM_NASSAU02",
+    "metadata": {
+      "precision": "3.62 m reported product precision",
+      "lola": "2.46 m LOLA RMS difference",
+      "scope": "Product diagnostics; not per-cell uncertainty"
+    },
+    "focus": [
+      128,
+      128
+    ],
+    "compare": [
+      131,
+      124
+    ],
+    "crop": {
+      "row_start_zero_based": 1208,
+      "col_start_zero_based": 1960,
+      "width_pixels": 256,
+      "height_pixels": 256
+    }
+  },
+  "connecting-ridge": {
+    "id": "connecting-ridge",
+    "title": "Connecting Ridge",
+    "context": "Moon · rover exploration",
+    "product": "NASA PGDA 78 · Site01 adjusted 5 m LDEM",
+    "W": 256,
+    "H": 256,
+    "res": 5,
+    "grid": {
+      "east": -12500,
+      "north": -11500,
+      "crs": "MOON_ME / JPL DE421 · lunar south polar stereographic, lon 0°"
+    },
+    "files": {
+      "ground": "connecting-ridge-height.f32"
+    },
+    "heightRMSFile": "connecting-ridge-heightRms.f32",
+    "lolaCountsFile": "connecting-ridge-counts.f32",
+    "lolaReturns": {
+      "layer": "LOLA returns per cell",
+      "labels": {
+        "none": "no LOLA return",
+        "present": "LOLA return in cell",
+        "unknown": "LOLA count not supplied"
+      },
+      "derived": "LOLA return in {k} of {n} source heights"
+    },
+    "range": [
+      1671.8094482421875,
+      1959.4962158203125
+    ],
+    "date": "Retrieved 5 November 2026; acquisition date not specified",
+    "credit": "NASA / GSFC Planetary Geodynamics Data Archive",
+    "datum": "Delivered surface height Z in metres; no vertical datum transformation performed. Source README does not separately specify vertical reference.",
+    "origin": "Supplier README (PGDA78-README.txt:7), quoted as the supplier's statement: surface height Z \"with interpolation filling empty pix\". Exact donors and earlier per-cell history are not supplied. LOLA returns per cell is a separate supplier count, not an origin or quality mask.",
+    "productionMethod": "LOLA orbital adjustment and surface interpolation",
+    "productionScope": "Delivered native 5 m LDEM",
+    "history": "Native window only: no reprojection, resampling or scaling. Supplier total Z RMS retained independently of height values; not propagated to derived results or used for planning.",
+    "sourceURL": "https://pgda.gsfc.nasa.gov/products/78",
+    "qualityReadmeURL": "../fixtures/lola/connecting-ridge/PGDA78-README.txt",
+    "metadata": {
+      "scope": "Supplier height RMS and LOLA returns per cell only; nothing is estimated for derived results",
+      "nativeGrid": "Pixel-registered 5 m centres; 256 × 256 native window at source row 1500, col 1300",
+      "referenceFrame": "MOON_ME, JPL DE421",
+      "heightRMSDefinition": "Supplier total height RMS error in metres (PGDA README, toterr layer): the RMS total height error over 100 simulated clones of the LDEM (Barker et al. 2021, Sect. 4). Not propagated to our slope, height spread or illumination; not a probability.",
+      "heightSource": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site01/Site01_final_adj_5mpp_surf.tif",
+      "heightRMSSource": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site01/Site01_final_adj_5mpp_toterr.tif",
+      "lolaSpotsSource": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site01/Site01_final_adj_5mpp_ldec.tif"
+    },
+    "focus": [
+      128,
+      128
+    ],
+    "proposalStart": {
+      "row": 128,
+      "col": 32
+    },
+    "proposalGoal": {
+      "row": 128,
+      "col": 224
+    }
+  }
+}

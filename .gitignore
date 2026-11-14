@@ -1,0 +1,18 @@
+node_modules/
+__pycache__/
+
+# Local dependencies, builds and review material
+.DS_Store
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+/build/
+/dist/
+/reviews/
+/review-notes/
+/supplementary/
+/supplementary.zip
+/video/
+/submission/

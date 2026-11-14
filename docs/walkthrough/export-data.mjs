@@ -1,0 +1,14 @@
+import {writeFileSync} from 'node:fs';
+import {DATASETS} from '../../src/fixtures/terrain.js';
+import {evaluate,query,createDatasetPipeline} from '../../src/core/index.js';
+const ds=DATASETS.find(d=>d.id==='lroc-nassau02'),cell={row:17,col:35};
+const limits={slopeDeg:4.5,roughness_m:.5};
+const ev=evaluate(ds,limits,createDatasetPipeline(ds));
+const nodes=['combined','roughness-criterion','slope-criterion'];
+const queries=Object.fromEntries(nodes.map(n=>[n,query(ev,n,cell)]));
+const lunar=DATASETS.find(d=>d.id==='lunar-low-sun');
+const le=evaluate(lunar,{slopeDeg:15,roughness_m:.15},createDatasetPipeline(lunar));
+const lq=query(le,'roughness-criterion',{row:11,col:44});
+const out={dataset:ds.id,W:ds.W,H:ds.H,cell,limits,queries,records:Object.fromEntries(nodes.map(n=>[n,ev.records[n].map(r=>({value:r.value,outcome:r.outcome,outcomes:r.outcomes,suspicious:r.quality.suspicious,total:r.quality.total}))])),lunar:{query:lq,dataset:lunar.id}};
+writeFileSync(new URL('./data.json',import.meta.url),JSON.stringify(out));
+console.log(JSON.stringify({roughness:queries['roughness-criterion'].value,suspicious:queries['roughness-criterion'].quality.suspicious,slope:queries['slope-criterion'].value,lunarInterpolated:lq.origin.counts.interpolated}));

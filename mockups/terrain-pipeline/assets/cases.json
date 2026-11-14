@@ -1,0 +1,86 @@
+{
+  "earth": {
+    "id": "earth",
+    "title": "Veurserveld, Voeren",
+    "context": "Earth · search & rescue",
+    "product": "DHMV II",
+    "grid": {
+      "east": 252500,
+      "north": 161012,
+      "crs": "EPSG:31370"
+    },
+    "W": 512,
+    "H": 512,
+    "res": 1,
+    "files": {
+      "ground": "voeren-ground.f32",
+      "surface": "voeren-surface.f32"
+    },
+    "range": [
+      134.49,
+      223.71
+    ],
+    "date": "26 & 31 March 2014",
+    "credit": "Bron: Digitaal Vlaanderen · DHMV II",
+    "datum": "TAW",
+    "origin": "Per-cell production history not supplied",
+    "quality": "No per-cell quality mask supplied",
+    "history": "Ground classification and interpolation are part of producing the DTM. Source flight records describe acquisition, not exact raster-cell dependencies.",
+    "sourceURL": "https://www.vlaanderen.be/datavindplaats/catalogus/digitaal-hoogtemodel-vlaanderen-ii-dtm-raster-1-m",
+    "sourceURLs": {
+      "ground": "https://www.vlaanderen.be/datavindplaats/catalogus/digitaal-hoogtemodel-vlaanderen-ii-dtm-raster-1-m",
+      "surface": "https://www.vlaanderen.be/digitaal-vlaanderen/onze-diensten-en-platformen/earth-observation-data-science-eodas/het-digitaal-hoogtemodel/digitaal-hoogtemodel-vlaanderen-ii"
+    },
+    "metadata": {
+      "flightRecords": 38,
+      "pointSupport": "All-return and last-return densities are tile-level metadata. Ground support has not been reconstructed."
+    },
+    "focus": [
+      259,
+      256
+    ]
+  },
+  "moon": {
+    "id": "moon",
+    "title": "North of Nassau crater",
+    "context": "Moon · rover exploration",
+    "product": "NAC_DTM_NASSAU02 v1.9",
+    "W": 256,
+    "H": 256,
+    "res": 4,
+    "files": {
+      "ground": "nassau.f32"
+    },
+    "qualityFile": "nassau-quality.u8",
+    "range": [
+      -346.3224182128906,
+      -95.6082534790039
+    ],
+    "date": "1 August 2022",
+    "credit": "NASA / GSFC / Arizona State University",
+    "datum": "Relative to lunar radius 1,737,400 m",
+    "origin": "Earlier per-cell history not supplied",
+    "quality": "LROC reconstruction quality codes",
+    "history": "Code 3: suspicious (edge, corner, did not correlate, etc.). Codes 10–14: successful correlation. These categories are not calibrated error probabilities.",
+    "sourceURL": "https://data.lroc.im-ldi.com/lroc/view_rdr/NAC_DTM_NASSAU02",
+    "metadata": {
+      "precision": "3.62 m reported product precision",
+      "lola": "2.46 m LOLA RMS difference",
+      "scope": "Product diagnostics; not per-cell uncertainty"
+    },
+    "focus": [
+      128,
+      128
+    ],
+    "compare": [
+      131,
+      124
+    ],
+    "crop": {
+      "row_start_zero_based": 1208,
+      "col_start_zero_based": 1960,
+      "width_pixels": 256,
+      "height_pixels": 256
+    }
+  }
+}

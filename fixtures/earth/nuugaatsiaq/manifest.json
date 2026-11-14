@@ -1,0 +1,110 @@
+{
+  "W": 250,
+  "H": 250,
+  "window": [
+    375,
+    375,
+    625,
+    625
+  ],
+  "grid": {
+    "east": -288378.0,
+    "north": -1996122.0,
+    "crs": "EPSG:3413 \u00b7 WGS84 / NSIDC Polar Stereographic North"
+  },
+  "range": [
+    8.5,
+    40.9375
+  ],
+  "rasters": {
+    "dem": {
+      "source": "dem-2km.tif",
+      "sourceSha256": "6ffcd0eedeb133192b0f235465eefb32ae7ed234f8537b714cd4965daa317cb2",
+      "file": "nuugaatsiaq-heights.f32",
+      "sha256": "5bceb5fb1eb8ff6892f7504f15c5135d30ed4c3b97ffbd479681971738020686"
+    },
+    "mask": {
+      "source": "mask-2km.tif",
+      "sourceSha256": "139e5c2ea9f338e795d81b197723ff1805c911d3d30bc53c9dfd9d3cff2bc40a",
+      "file": "nuugaatsiaq-mask.u8",
+      "sha256": "8f94b81c08ad83e57c303e5d89295affc498d2bb1b57133370a476ef28969522"
+    },
+    "matchtag": {
+      "source": "matchtag-2km.tif",
+      "sourceSha256": "08c94526bd2ac97a61327373c22887b80f694054fa82a72734c08032f33f551b",
+      "file": "nuugaatsiaq-matchtag.u8",
+      "sha256": "2550014b87c2df62dab0630de738797b9fbfcf873f122651c5ab6bbadce9e8a6"
+    }
+  },
+  "proposalStart": {
+    "row": 110,
+    "col": 100
+  },
+  "proposalGoal": {
+    "row": 165,
+    "col": 80
+  },
+  "flagCell": {
+    "row": 165,
+    "col": 78
+  },
+  "sourceURL": "https://stac.pgc.umn.edu/api/v1/collections/arcticdem-strips-s2s041-2m/items/SETSM_s2s041_WV01_20170619_10200100629F4B00_102001006157B200_2m_lsf_seg2",
+  "sourceURLs": {
+    "dem": "https://pgc-opendata-dems.s3.us-west-2.amazonaws.com/arcticdem/strips/s2s041/2m/n71w054/SETSM_s2s041_WV01_20170619_10200100629F4B00_102001006157B200_2m_lsf_seg2_dem.tif",
+    "mask": "https://pgc-opendata-dems.s3.us-west-2.amazonaws.com/arcticdem/strips/s2s041/2m/n71w054/SETSM_s2s041_WV01_20170619_10200100629F4B00_102001006157B200_2m_lsf_seg2_bitmask.tif",
+    "matchtag": "https://pgc-opendata-dems.s3.us-west-2.amazonaws.com/arcticdem/strips/s2s041/2m/n71w054/SETSM_s2s041_WV01_20170619_10200100629F4B00_102001006157B200_2m_lsf_seg2_matchtag.tif",
+    "metadata": "https://pgc-opendata-dems.s3.us-west-2.amazonaws.com/arcticdem/strips/s2s041/2m/n71w054/SETSM_s2s041_WV01_20170619_10200100629F4B00_102001006157B200_2m_lsf_seg2_mdf.txt",
+    "readme": "https://pgc-opendata-dems.s3.us-west-2.amazonaws.com/arcticdem/strips/s2s041/2m/n71w054/SETSM_s2s041_WV01_20170619_10200100629F4B00_102001006157B200_2m_lsf_seg2_readme.txt"
+  },
+  "qualityGuide": "https://www.pgc.umn.edu/guides/stereo-derived-elevation-models/pgc-dem-products-arcticdem-rema-and-earthdem/",
+  "responseURL": "https://www.forsvaret.dk/da/nyheder/2017/flodbolge-i-uummannaq-fjorden2/",
+  "contextURL": "https://nhess.copernicus.org/articles/20/2521/2020/",
+  "endpointStatus": "Hallmark-selected illustrative endpoints on the southern settlement peninsula. Checked against published settlement aerial/topographic maps (Strzelecki & Jask\u00f3lski 2020, figures 1 and 3) and the downloaded OpenStreetMap coastline context (5 November 2026). These are not a documented rescue route, surveyed clearance, road-following constraint or rover capability claim.",
+  "checks": [
+    {
+      "row": 110,
+      "col": 100,
+      "height": 32.8203125,
+      "mask": 0,
+      "matchtag": 1,
+      "lat": 71.5352085053956,
+      "lon": -53.21404592677472
+    },
+    {
+      "row": 165,
+      "col": 80,
+      "height": 28.96875,
+      "mask": 4,
+      "matchtag": 1,
+      "lat": 71.53417689986546,
+      "lon": -53.21472404527259
+    },
+    {
+      "row": 165,
+      "col": 78,
+      "height": 28.8984375,
+      "mask": 4,
+      "matchtag": 1,
+      "lat": 71.53417175441017,
+      "lon": -53.21483649677333
+    },
+    {
+      "row": 125,
+      "col": 125,
+      "height": 28.7734375,
+      "mask": 0,
+      "matchtag": 1,
+      "lat": 71.5350054965032,
+      "lon": -53.21251846540799
+    }
+  ],
+  "landContext": {
+    "file": "land-context.json",
+    "source": "https://api.openstreetmap.org/api/0.6/map?bbox=-53.225,71.53,-53.198,71.545",
+    "downloaded": "2026-11-05",
+    "credit": "\u00a9 OpenStreetMap contributors \u00b7 ODbL",
+    "snapshotFile": "land-context.osm.xml",
+    "snapshotSha256": "69779584e89046bf696232e23453fcef7d594dc796f98f27b17d910868c7e032",
+    "purpose": "Geographic placement check only; not a planning constraint or 2017 road/clearance observation."
+  }
+}

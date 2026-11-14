@@ -1,0 +1,31 @@
+# Lunar evidence cases
+
+The two examples carry distinct producer semantics. Nassau retains a categorical supplier confidence product and incomplete upstream history. The Connecting Ridge example retains a continuous numerical estimate of surface-height RMS error and a separate LOLA return count. Neither turns an evidence value into an automatic route verdict.
+
+## Connecting Ridge: supplied numerical height uncertainty
+
+Source: [NASA PGDA product 78](https://pgda.gsfc.nasa.gov/products/78), Site01, with [provider README](https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/README) retained alongside the fixture. The LDEM is surface-interpolated height in **metres**, not kilometres. The accompanying `toterr` is total Z uncertainty, formally RMS error, in metres. `ldec` counts LOLA returns per pixel; it is not a probability or categorical confidence flag. A finite interpolated height with zero returns is expected and remains a valid delivered height, not missing terrain. The provider's XYZI point-cloud coordinates use kilometres; that unit must not be transferred to the GeoTIFF height values.
+
+The release uses 5 m posting in south polar stereographic metres, MOON_ME/DE421. The actual downloaded TIFF CRS has spherical radius 1,737,400 m, south-pole origin and longitude of origin zero. GeoTIFF affine coordinates describe pixel edges; its `AREA_OR_POINT=Area` and GMT `node_offset=1` represent pixel registration. Cell centres follow `x = c + (column + 0.5)*5`, `y = f - (row + 0.5)*5`. This distinction prevents a half-cell displacement when recreating map coordinates. Original source dimensions are 3,200 by 3,200; their affine is `[5,0,-19000,0,-5,-4000]`.
+
+### What the RMS model represents
+
+[Barker et al., *Improved LOLA Elevation Maps for South Pole Landing Sites: Error Estimates and Their Impact on Illumination Conditions*, accepted manuscript, section 4](https://ntrs.nasa.gov/citations/20205009660) describes the model behind these supplied maps. Smoothed measured topography is combined with short-baseline artificial fractal terrain (Hurst exponent 1). Simulated terrain is sampled at the actual LOLA locations after track-coordinate perturbations following track error covariance and 10 cm vertical range precision, then interpolated like the observations. The difference from the simulated input gives one error realization; adding it to the measured LDEM gives a clone. The per-cell delivered quantity is RMS total height error over 100 realizations. It includes interpolation, orbital, range and sampling errors, conditional on this model. Section 4 also discusses interpolation-method sensitivity; this does not authorize adding an arbitrary extra factor to delivered TIFF values.
+
+The source estimate is neither a confidence probability nor uncertainty propagated through Hallmark's own slope, roughness or illumination computations. Displaying maximum or mean source RMS over a result's supporting cells is an evidence summary whose units remain metres; it is not slope RMS or a calculated output uncertainty. Do not recast a high RMS cell as “suspicious,” a zero-count cell as invalid, or a count as “independent samples.” No safety threshold is supplied here.
+
+### Retention and reproduction
+
+The retained fixture is at `prototype/fixtures/lola/connecting-ridge/`. `manifest.json` fixes the native window, original download URLs and hashes, unmodified native sample hashes, projection, transform, source nodata and observed missing counts. Three little-endian Float32 row-major `.f32` arrays retain native samples. `sample.json` duplicates these exact binary32 values as JSON numbers for browser loading. There is no resampling, height scaling, normalization, synthetic error field, or replacement of unknowns by zeros. `reproduce.py` downloads each TIFF into an external cache, reads the fixed window and regenerates the fixture. The retained provider README supplies the source unit definitions. Full source TIFFs remain in the external cache rather than the repository.
+
+### Optional distinct evidence-scale extension
+
+[NASA PGDA product 90](https://pgda.gsfc.nasa.gov/products/90) additionally offers effective-resolution maps and roughness products with explicit baselines. Effective resolution would add a different quantity from posting. No product 90 samples have been acquired for this fixture and no corresponding layer should be implied. Supplier roughness and slope-error maps require their own definitions; they cannot be attached to Hallmark's independently computed estimators.
+
+### Acquired crop and worked inspection
+
+The downloaded fixture is a 256 × 256 native window at original row offset 1,500, column offset 1,300. Its affine is `[5,0,-12500,0,-5,-11500]`; outer bounds are −12,500 to −11,220 m eastings and −12,780 to −11,500 m northings. All 65,536 samples in each layer are valid in the source mask and finite; the original TIFF nodata is NaN. Heights range 1,671.809–1,959.496 m and supplied RMS ranges 0.070440–2.695146 m. Return counts range 0–3, with 60,618 zero-return pixels and 4,918 positive-return pixels. Thus the scene directly demonstrates a finite surface across cells with different local observation support.
+
+An illustrative inspection path runs along crop row 128 from column 32 to 224 (960 m between endpoint centres). At columns 32, 80, 128, 176 and 224, delivered heights are respectively 1,842.345, 1,885.392, 1,918.238, 1,935.354 and 1,952.009 m, while RMS values are 0.394703, 0.178295, 0.460098, 0.273220 and 0.207440 m. Corresponding return counts are 0, 0, 1, 1 and 1. These are source samples, not path-maximum summaries or propagated output error. The path is a display walkthrough and has no validated safety status.
+
+Crop cell (column 0, row 0), index 0, is an explicit zero-return example with finite height 1,671.8094482421875 m and RMS 0.6303908228874207 m. The minimum supplied RMS occurs at (162,50), index 12,962, with 0.0704401284456253 m and two returns. The maximum occurs at (159,2), index 671, with 2.695146083831787 m and zero returns. Exact values and original source/file hashes are retained in the manifest. Reproduction completed successfully with exact native Float32 equality; all three raster dimensions, transforms and CRS were checked for alignment.

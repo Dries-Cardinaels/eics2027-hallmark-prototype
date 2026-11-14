@@ -1,0 +1,34 @@
+{
+  "name": "hallmark-inspection-prototype",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Terrain evidence for mobile robot supervision: Earth search and rescue and lunar rover exploration.",
+  "scripts": {
+    "test": "node --test \"tests/*.test.mjs\"",
+    "build": "node tools/build-standalone.mjs",
+    "generate:lroc": "node tools/generate-lroc-fixture.mjs",
+    "generate:earth": "node tools/generate-earth-fixture.mjs langtang && node tools/generate-earth-fixture.mjs diepenbeek",
+    "render:earth-surface": "python3 tools/render-earth-surface.py langtang && python3 tools/render-earth-surface.py diepenbeek",
+    "check:earth-surface": "python3 tools/render-earth-surface.py langtang --check && python3 tools/render-earth-surface.py diepenbeek --check",
+    "fetch:earth": "node tools/fetch-earth-source.mjs langtang --write && node tools/fetch-earth-source.mjs diepenbeek --write",
+    "fetch:basemap": "node tools/fetch-basemap.mjs langtang --write && node tools/fetch-basemap.mjs diepenbeek --write",
+    "generate:lunar": "node tools/generate-lunar.mjs",
+    "check:lunar": "node tools/generate-lunar.mjs --check",
+    "generate:previews": "python3 tools/generate-previews.py",
+    "check:previews": "python3 tools/generate-previews.py --check",
+    "serve": "python3 -m http.server 8765 --bind 127.0.0.1",
+    "check:presentation": "node tools/check-presentation.mjs",
+    "profile:interactions": "node tools/profile-interactions.mjs",
+    "check:interactions": "node tools/profile-interactions.mjs --check",
+    "build:mockups": "node tools/build-terrain-mockups.mjs",
+    "mockups": "npm run build:mockups && python3 -m http.server 8766 --bind 127.0.0.1",
+    "prepare:editor": "node tools/prepare-editor.mjs",
+    "editor": "npm run prepare:editor && python3 tools/serve-editor.py"
+  },
+  "devDependencies": {
+    "acorn": "^8.19.0",
+    "geotiff": "2.1.3",
+    "three": "0.160.0"
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "caseId": "blatten",
+  "title": "Tennmatten, Blatten (L\u00f6tschen), Switzerland",
+  "product": "swissALTI3D",
+  "edition": 2024,
+  "surveyDate": null,
+  "dateStatus": "2024 product edition verified by archive asset; individual survey acquisition date not supplied in GeoTIFF and STAC metadata unavailable at preparation time. Do not label 2024 as acquisition year.",
+  "eventRelation": "Pre-collapse baseline, before the 28 May 2025 Blatten collapse. Does not represent the deposit or current traversability.",
+  "retrieved": "2026-11-05",
+  "sources": [
+    {
+      "tile": "2627-1140",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2627-1140/swissalti3d_2024_2627-1140_2_2056_5728.tif",
+      "sha256": "65f9a2e1758c7a3bb3587ebf6ed9bc7877617755252f192bf5cd877119e8caac",
+      "width": 500,
+      "height": 500,
+      "sourceWindow": {
+        "rowStart": 400,
+        "colStart": 250,
+        "width": 200,
+        "height": 100
+      },
+      "outputRowStart": 0,
+      "affine": [
+        2.0,
+        0.0,
+        2627000.0,
+        0.0,
+        -2.0,
+        1141000.0
+      ]
+    },
+    {
+      "tile": "2627-1139",
+      "url": "https://data.geo.admin.ch/ch.swisstopo.swissalti3d/swissalti3d_2024_2627-1139/swissalti3d_2024_2627-1139_2_2056_5728.tif",
+      "sha256": "13310ae70c778b26c79876119302371effd0680707c02e97f12286ee155338e3",
+      "width": 500,
+      "height": 500,
+      "sourceWindow": {
+        "rowStart": 0,
+        "colStart": 250,
+        "width": 200,
+        "height": 100
+      },
+      "outputRowStart": 100,
+      "affine": [
+        2.0,
+        0.0,
+        2627000.0,
+        0.0,
+        -2.0,
+        1140000.0
+      ]
+    }
+  ],
+  "productURL": "https://www.swisstopo.admin.ch/en/height-model-swissalti3d",
+  "termsURL": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-and-geoservices",
+  "credit": "Federal Office of Topography swisstopo",
+  "rights": "Standard swisstopo open government data: use, distribution, processing and commercial use permitted with attribution. Not a Rapid Mapping product or derivative.",
+  "raster": {
+    "width": 200,
+    "height": 200,
+    "resolution": 2,
+    "crs": "EPSG:2056",
+    "verticalCRS": "EPSG:5728 (LN02 height)",
+    "affine": [
+      2,
+      0,
+      2627500,
+      0,
+      -2,
+      1140200
+    ],
+    "bounds": {
+      "west": 2627500,
+      "south": 1139800,
+      "east": 2627900,
+      "north": 1140200
+    },
+    "sourceNoData": -9999,
+    "missingCells": 0,
+    "min": 1420.7855224609375,
+    "max": 1589.2987060546875,
+    "encoding": "IEEE754 float32 little-endian, row-major, row zero north, column zero west; source samples preserved with no resampling, interpolation or quantization.",
+    "sha256": "521fb942ce32ae73122b2a5651c5cd615b44db44dd1b75e0acfaddba9b984e16"
+  },
+  "focus": [
+    98,
+    106
+  ],
+  "proposalStart": {
+    "row": 171,
+    "col": 45
+  },
+  "proposalGoal": {
+    "row": 50,
+    "col": 145
+  },
+  "endpointStatus": "Illustrative inspection endpoints chosen for demonstration, not sourced responder positions or a validated rescue route.",
+  "checks": [
+    {
+      "row": 0,
+      "col": 0,
+      "index": 0,
+      "east": 2627501.0,
+      "north": 1140199.0,
+      "height": 1589.2987060546875
+    },
+    {
+      "row": 98,
+      "col": 106,
+      "index": 19706,
+      "east": 2627713.0,
+      "north": 1140003.0,
+      "height": 1438.57861328125
+    },
+    {
+      "row": 99,
+      "col": 199,
+      "index": 19999,
+      "east": 2627899.0,
+      "north": 1140001.0,
+      "height": 1435.5535888671875
+    },
+    {
+      "row": 100,
+      "col": 0,
+      "index": 20000,
+      "east": 2627501.0,
+      "north": 1139999.0,
+      "height": 1480.58837890625
+    },
+    {
+      "row": 171,
+      "col": 45,
+      "index": 34245,
+      "east": 2627591.0,
+      "north": 1139857.0,
+      "height": 1438.1396484375
+    },
+    {
+      "row": 50,
+      "col": 145,
+      "index": 10145,
+      "east": 2627791.0,
+      "north": 1140099.0,
+      "height": 1443.421875
+    },
+    {
+      "row": 199,
+      "col": 199,
+      "index": 39999,
+      "east": 2627899.0,
+      "north": 1139801.0,
+      "height": 1436.6240234375
+    }
+  ],
+  "cropGeoTiffSha256": "4a5fdaa6298b02dd576f407d23fdb7fafe717ca43bed7c91750499b78e1ec544"
+}

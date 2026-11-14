@@ -1,0 +1,37 @@
+[
+  {
+    "name": "NAC_DTM_NASSAU02_README.TXT",
+    "url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/DATA/SDP/NAC_DTM/NASSAU02/NAC_DTM_NASSAU02_README.TXT",
+    "resolved_url": "https://pds.mcp.nasa.gov/data/store/img/lunar_reconnaissance_orbiter/pds4/lroc/lro-l-lroc-5-rdr/LROLRC_2001/DATA/SDP/NAC_DTM/NASSAU02/NAC_DTM_NASSAU02_README.TXT",
+    "bytes": 8702,
+    "sha256": "e23fd3a5a87d12148e0741a504084bac2ab9e582a346b1d40572f5978eff6dea"
+  },
+  {
+    "name": "NAC_DTM_NASSAU02.LBL",
+    "url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/DATA/SDP/NAC_DTM/NASSAU02/NAC_DTM_NASSAU02.LBL",
+    "resolved_url": "https://pds.mcp.nasa.gov/data/store/img/lunar_reconnaissance_orbiter/pds4/lroc/lro-l-lroc-5-rdr/LROLRC_2001/DATA/SDP/NAC_DTM/NASSAU02/NAC_DTM_NASSAU02.LBL",
+    "bytes": 3589,
+    "sha256": "2777b6eadb59c3741529850ffaa0eee9ef5c803894372a4dc16f43319eb37e71"
+  },
+  {
+    "name": "NAC_DTM_NASSAU02.TIF",
+    "url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/DATA/SDP/NAC_DTM/NASSAU02/NAC_DTM_NASSAU02.TIF",
+    "resolved_url": "https://pds.mcp.nasa.gov/data/store/img/lunar_reconnaissance_orbiter/pds4/lroc/lro-l-lroc-5-rdr/LROLRC_2001/DATA/SDP/NAC_DTM/NASSAU02/NAC_DTM_NASSAU02.TIF",
+    "bytes": 27255071,
+    "sha256": "69688c434ac593d54a9ae2897d96044dbcebfb5ad5b540ec5becf74e1059dfe4"
+  },
+  {
+    "name": "NAC_DTM_NASSAU02_CONF.IMG",
+    "url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/DATA/SDP/NAC_DTM/NASSAU02/NAC_DTM_NASSAU02_CONF.IMG",
+    "resolved_url": "https://pds.mcp.nasa.gov/data/store/img/lunar_reconnaissance_orbiter/pds4/lroc/lro-l-lroc-5-rdr/LROLRC_2001/DATA/SDP/NAC_DTM/NASSAU02/NAC_DTM_NASSAU02_CONF.IMG",
+    "bytes": 6813840,
+    "sha256": "3e6fefcbc1b9d21e7d1834862885c1e8c9c3148a5d4d4fc4316b78b039cd9d9e"
+  },
+  {
+    "name": "NAC_DTM_NASSAU02_CONF.TIF",
+    "url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/EXTRAS/BROWSE/NAC_DTM/NASSAU02/NAC_DTM_NASSAU02_CONF.TIF",
+    "resolved_url": "https://pds.mcp.nasa.gov/data/store/img/lunar_reconnaissance_orbiter/pds4/lroc/lro-l-lroc-5-rdr/LROLRC_2001/EXTRAS/BROWSE/NAC_DTM/NASSAU02/NAC_DTM_NASSAU02_CONF.TIF",
+    "bytes": 6815945,
+    "sha256": "64d8e1ce140e7f41a3be12914a0189ea19bf40d550cba22f5a7322627a906cfc"
+  }
+]

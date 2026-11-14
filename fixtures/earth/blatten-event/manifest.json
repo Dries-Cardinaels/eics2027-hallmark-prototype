@@ -1,0 +1,89 @@
+{
+  "product": "Schmauß · photogrammetric surface model v2",
+  "date": "30 May 2025",
+  "surveyPhase": "post-event",
+  "files": {
+    "post-event": "blatten-20250530-dsm.f32"
+  },
+  "groundRGBFile": "blatten-20250530-rgb.u8",
+  "W": 400,
+  "H": 400,
+  "res": 1.000040000000072,
+  "grid": {
+    "east": 2627500.0954160155,
+    "north": 1140200.3648084807,
+    "crs": "EPSG:2056 · CH1903+ / LV95"
+  },
+  "range": [
+    1440.854248046875,
+    1598.7161865234375
+  ],
+  "heightOrigin": "undocumented",
+  "productionMethod": "Metashape reconstruction from 30 May oblique aerial photographs",
+  "productionScope": "Published 1 m surface raster v2. Hallmark extracts native cells.",
+  "origin": "Per-cell stereo matches, interpolation history and accuracy are not supplied.",
+  "quality": "No per-cell quality flags or calibrated uncertainty supplied.",
+  "datum": "Metres; reconstruction aligned to swissALTI3D, vertical datum not specified in the author’s file.",
+  "credit": "Simeon Schmauß - created from BAFU/swisstopo Rapid Mapping oblique imagery, CC BY 4.0. Source: FOEN, swisstopo.",
+  "sourceURL": "https://drive.google.com/file/d/1VLut72e4zpnU5xSD8tnQBTNI021GGKkl/view",
+  "history": "The author georeferenced the reconstruction to swissALTI3D and SWISSIMAGE. Vegetation and structures remain in the surface.",
+  "focus": [
+    197,
+    212
+  ],
+  "proposalStart": {
+    "row": 343,
+    "col": 90
+  },
+  "proposalGoal": {
+    "row": 101,
+    "col": 290
+  },
+  "metadata": {
+    "surveyControl": "18 manually placed ground control points",
+    "positionalResidual": "1.6 m average positional error at controls (whole reconstruction)",
+    "missingValues": "All 160,000 native elevations in this crop are finite. Coverage does not establish surface stability.",
+    "colour": "30 May federal orthophoto, averaged into each native surface cell for display.",
+    "sourceLicense": "CC BY 4.0 · Simeon Schmauß (reconstruction). Source: FOEN, swisstopo (imagery).",
+    "cropSha256": "dce94fc2a386906537465b6e27703c02bba8d6c8655b1253650966e23685e5ef",
+    "temporalContext": "The surface survey supplies no measurement of buried water or load-bearing strength.",
+    "licenseURL": "https://creativecommons.org/licenses/by/4.0/",
+    "methodsURL": "https://docs.google.com/document/d/12vx7Han8xQMpate9QUdXkMHgcBfkpXxJn0F6ctbs79Y/edit"
+  },
+  "assets": {
+    "heightSha256": "dce94fc2a386906537465b6e27703c02bba8d6c8655b1253650966e23685e5ef",
+    "rgbSha256": "0776d5f4f8b46cea70dd36a6120272c13596517970a7b96790aff539a30866d6",
+    "sourceHeightSha256": "45807ff2a7cfc1d6a6cc68ba90d7c37755b0fd886f241cfa1fc3fdb86fadc67c",
+    "window": [
+      2582,
+      3290,
+      400,
+      400
+    ],
+    "sourceNoData": -32767,
+    "affine": [
+      2627500.0954160155,
+      1.000040000000072,
+      0.0,
+      1140200.3648084807,
+      0.0,
+      -1.0000399999999925
+    ],
+    "rgbSource": "https://data.geo.admin.ch/ch.swisstopo.spezialbefliegungen/ram-2025-05-30t08090000/ram-2025-05-30t08090000-rgb-mosaic.tif"
+  },
+  "contextPhoto": {
+    "title": "Blatten · Tennmatten and the debris deposit",
+    "file": "../../fixtures/earth/blatten-event/tennmatten-30may.jpg",
+    "thumbnail": "../../fixtures/earth/blatten-event/tennmatten-preview.jpg",
+    "bounds": {
+      "west": 2627250,
+      "east": 2628250,
+      "north": 1140350,
+      "south": 1139650
+    },
+    "date": "30 May 2025",
+    "credit": "Source: FOEN, swisstopo",
+    "sourceURL": "https://www.swisstopo.admin.ch/en/rapidmapping-news-en-20261021",
+    "fullViewLabel": "Open photograph"
+  }
+}

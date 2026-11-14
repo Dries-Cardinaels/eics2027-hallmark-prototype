@@ -1,0 +1,209 @@
+{
+  "id": "nassau-sunrise-2026-10-03",
+  "label": "3\u20134 Oct 2026 \u00b7 24 h UTC",
+  "kind": "jpl-horizons",
+  "durationHours": 24,
+  "startUtc": "2026-10-03T12:00:00Z",
+  "endUtc": "2026-10-04T12:00:00Z",
+  "boundary": "Terrain inside the delivered crop only; distant terrain excluded",
+  "samples": [
+    {
+      "hour": 0.5,
+      "weightHours": 1,
+      "utc": "2026-10-03T12:30:00Z",
+      "azimuthDeg": 92.12367,
+      "elevationDeg": -2.526461
+    },
+    {
+      "hour": 1.5,
+      "weightHours": 1,
+      "utc": "2026-10-03T13:30:00Z",
+      "azimuthDeg": 91.936978,
+      "elevationDeg": -2.054111
+    },
+    {
+      "hour": 2.5,
+      "weightHours": 1,
+      "utc": "2026-10-03T14:30:00Z",
+      "azimuthDeg": 91.750469,
+      "elevationDeg": -1.581699
+    },
+    {
+      "hour": 3.5,
+      "weightHours": 1,
+      "utc": "2026-10-03T15:30:00Z",
+      "azimuthDeg": 91.564117,
+      "elevationDeg": -1.109229
+    },
+    {
+      "hour": 4.5,
+      "weightHours": 1,
+      "utc": "2026-10-03T16:30:00Z",
+      "azimuthDeg": 91.377896,
+      "elevationDeg": -0.636707
+    },
+    {
+      "hour": 5.5,
+      "weightHours": 1,
+      "utc": "2026-10-03T17:30:00Z",
+      "azimuthDeg": 91.191782,
+      "elevationDeg": -0.164137
+    },
+    {
+      "hour": 6.5,
+      "weightHours": 1,
+      "utc": "2026-10-03T18:30:00Z",
+      "azimuthDeg": 91.005749,
+      "elevationDeg": 0.308475
+    },
+    {
+      "hour": 7.5,
+      "weightHours": 1,
+      "utc": "2026-10-03T19:30:00Z",
+      "azimuthDeg": 90.819771,
+      "elevationDeg": 0.781125
+    },
+    {
+      "hour": 8.5,
+      "weightHours": 1,
+      "utc": "2026-10-03T20:30:00Z",
+      "azimuthDeg": 90.633825,
+      "elevationDeg": 1.253807
+    },
+    {
+      "hour": 9.5,
+      "weightHours": 1,
+      "utc": "2026-10-03T21:30:00Z",
+      "azimuthDeg": 90.447884,
+      "elevationDeg": 1.726518
+    },
+    {
+      "hour": 10.5,
+      "weightHours": 1,
+      "utc": "2026-10-03T22:30:00Z",
+      "azimuthDeg": 90.261923,
+      "elevationDeg": 2.19925
+    },
+    {
+      "hour": 11.5,
+      "weightHours": 1,
+      "utc": "2026-10-03T23:30:00Z",
+      "azimuthDeg": 90.075917,
+      "elevationDeg": 2.672001
+    },
+    {
+      "hour": 12.5,
+      "weightHours": 1,
+      "utc": "2026-10-04T00:30:00Z",
+      "azimuthDeg": 89.889841,
+      "elevationDeg": 3.144765
+    },
+    {
+      "hour": 13.5,
+      "weightHours": 1,
+      "utc": "2026-10-04T01:30:00Z",
+      "azimuthDeg": 89.703669,
+      "elevationDeg": 3.617536
+    },
+    {
+      "hour": 14.5,
+      "weightHours": 1,
+      "utc": "2026-10-04T02:30:00Z",
+      "azimuthDeg": 89.517375,
+      "elevationDeg": 4.09031
+    },
+    {
+      "hour": 15.5,
+      "weightHours": 1,
+      "utc": "2026-10-04T03:30:00Z",
+      "azimuthDeg": 89.330936,
+      "elevationDeg": 4.563082
+    },
+    {
+      "hour": 16.5,
+      "weightHours": 1,
+      "utc": "2026-10-04T04:30:00Z",
+      "azimuthDeg": 89.144323,
+      "elevationDeg": 5.035847
+    },
+    {
+      "hour": 17.5,
+      "weightHours": 1,
+      "utc": "2026-10-04T05:30:00Z",
+      "azimuthDeg": 88.957513,
+      "elevationDeg": 5.5086
+    },
+    {
+      "hour": 18.5,
+      "weightHours": 1,
+      "utc": "2026-10-04T06:30:00Z",
+      "azimuthDeg": 88.77048,
+      "elevationDeg": 5.981335
+    },
+    {
+      "hour": 19.5,
+      "weightHours": 1,
+      "utc": "2026-10-04T07:30:00Z",
+      "azimuthDeg": 88.583196,
+      "elevationDeg": 6.454049
+    },
+    {
+      "hour": 20.5,
+      "weightHours": 1,
+      "utc": "2026-10-04T08:30:00Z",
+      "azimuthDeg": 88.395636,
+      "elevationDeg": 6.926735
+    },
+    {
+      "hour": 21.5,
+      "weightHours": 1,
+      "utc": "2026-10-04T09:30:00Z",
+      "azimuthDeg": 88.207775,
+      "elevationDeg": 7.399388
+    },
+    {
+      "hour": 22.5,
+      "weightHours": 1,
+      "utc": "2026-10-04T10:30:00Z",
+      "azimuthDeg": 88.019584,
+      "elevationDeg": 7.872004
+    },
+    {
+      "hour": 23.5,
+      "weightHours": 1,
+      "utc": "2026-10-04T11:30:00Z",
+      "azimuthDeg": 87.831039,
+      "elevationDeg": 8.344578
+    }
+  ],
+  "site": {
+    "longitudeEastDeg": 178.9907282199979,
+    "latitudeDeg": -21.591941221585248,
+    "altitudeKm": -0.5844321662597656
+  },
+  "source": {
+    "name": "NASA/JPL Horizons",
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%2710%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27coord%40301%27&COORD_TYPE=%27GEODETIC%27&SITE_COORD=%27178.9907282199979%2C-21.591941221585248%2C-0.5844321662597656%27&START_TIME=%272026-10-03+12%3A30%27&STOP_TIME=%272026-10-04+11%3A30%27&STEP_SIZE=%271+h%27&QUANTITIES=%274%27&CSV_FORMAT=%27YES%27&APPARENT=%27AIRLESS%27&TIME_DIGITS=%27SECONDS%27",
+    "documentation": "https://ssd.jpl.nasa.gov/horizons/manual.html",
+    "sha256": "15b4e949fe522c0feaae5e16a3287d59951f58907cec11d9a19d07baeafbe27f",
+    "signature": {
+      "source": "NASA/JPL Horizons API",
+      "version": "1.2"
+    },
+    "frame": "MEAN_ME (high precision)",
+    "ephemeris": "DE441",
+    "quantity": "4: airless apparent azimuth and elevation",
+    "coordinateDerivation": "Crop centre from the source equirectangular projection; mean delivered elevation; north-up grid"
+  },
+  "fixedSun": {
+    "hour": 12.5,
+    "weightHours": 1,
+    "utc": "2026-10-04T00:30:00Z",
+    "azimuthDeg": 89.889841,
+    "elevationDeg": 3.144765
+  },
+  "gridMetric": {
+    "eastSpacing_m": 4.0114083076210365,
+    "northSpacing_m": 3.9999999999986
+  }
+}

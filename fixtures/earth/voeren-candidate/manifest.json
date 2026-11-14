@@ -1,0 +1,210 @@
+{
+  "status": "research candidate; not connected to the active prototype",
+  "interpretation": "Delivered terrain belief from historical airborne LiDAR; neither ground truth nor incident-time reality. No cellwise uncertainty supplied or inferred.",
+  "retrieved_utc": "2026-11-03T14:52:55Z",
+  "attribution": "Bron: Digitaal Vlaanderen — Digitaal Hoogtemodel Vlaanderen II (2013–2015); local flight-strip metadata: 2014-03-26 and 2014-03-31.",
+  "site": {
+    "name": "Veurserveld / Veurs-area hills, Voeren, Belgium",
+    "center_epsg31370": [
+      252756,
+      160756
+    ],
+    "center_wgs84_lon_lat": [
+      5.824861521159905,
+      50.74824473224866
+    ],
+    "bbox_epsg31370_outer_edges": [
+      252500,
+      160500,
+      253012,
+      161012
+    ]
+  },
+  "raster": {
+    "file": "dhmvii_dtm_1m_veurserveld_512m.tif",
+    "source_url": "https://geo.api.vlaanderen.be/dhmv/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=DHMVII_DTM_1m&crs=EPSG%3A31370&bbox=252500%2C160500%2C253012%2C161012&resx=1&resy=1&format=GeoTIFF&interpolation=nearest+neighbor",
+    "wcs_parameters": {
+      "service": "WCS",
+      "version": "1.0.0",
+      "request": "GetCoverage",
+      "coverage": "DHMVII_DTM_1m",
+      "crs": "EPSG:31370",
+      "bbox": "252500,160500,253012,161012",
+      "resx": "1",
+      "resy": "1",
+      "format": "GeoTIFF",
+      "interpolation": "nearest neighbor"
+    },
+    "http_status": 200,
+    "content_type": "image/tiff",
+    "width": 512,
+    "height": 512,
+    "bands": 1,
+    "dtype": "float32",
+    "horizontal_crs": "EPSG:31370",
+    "vertical_reference": "TAW; producer FAQ states height values in metres relative to TAW",
+    "pixel_size_metres": [
+      1,
+      1
+    ],
+    "affine_a_b_c_d_e_f": [
+      1,
+      0,
+      252500,
+      0,
+      -1,
+      161012
+    ],
+    "nodata_declared": -9999,
+    "nodata_cells": 0,
+    "height_range_metres": [
+      134.49000549316406,
+      223.7100067138672
+    ]
+  },
+  "native_grid_verification": {
+    "description_url": "https://geo.api.vlaanderen.be/dhmv/wcs?service=WCS&version=1.0.0&request=DescribeCoverage&coverage=DHMVII_DTM_1m",
+    "file": "wcs-describe-coverage.xml",
+    "native_center_origin": [
+      17000.5,
+      249999.5
+    ],
+    "native_axis_offsets": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        -1
+      ]
+    ],
+    "output_first_cell_center": [
+      252500.5,
+      161011.5
+    ],
+    "native_column_row_offset": [
+      235500,
+      88988
+    ],
+    "verification": "Same native CRS and 1m spacing, cell centers coincide at integer grid offsets; nearest-neighbor requested. No local reprojection/resampling. This verifies alignment, not the producer interpolation lineage."
+  },
+  "source_point_metadata": {
+    "file": "lidar-tile-metadata.json",
+    "source_url": "https://remotesensing.vlaanderen.be/services/openlidar/wfs?service=wfs&version=1.0.0&request=GetFeature&typeName=openlidar%3ALiDAR_DHMV_II_LAZtiles&bbox=252500%2C160500%2C253012%2C161012%2CEPSG%3A31370&outputFormat=json&propertyName=tile_id%2Ctile_location%2Ctile_date%2Ctile_file_source_id%2Ctile_point_density_allreturn%2Ctile_point_density_lastreturn%2Ctile_totalpoints&maxFeatures=100",
+    "number_matched": 38,
+    "number_returned": 38,
+    "flight_dates": [
+      "2014-03-26Z",
+      "2014-03-31Z"
+    ],
+    "flight_strip_ids": [
+      34082,
+      34084,
+      34125,
+      34126,
+      34127,
+      34128,
+      34129,
+      34130
+    ],
+    "meaning": "Spatial query of source flight-strip tile footprints, not exact official DTM dependencies. All-return/last-return density attributes are tile-level sampling metadata, not classified-ground support or cellwise accuracy. No ground-density raster computed."
+  },
+  "downloaded_source_point_sample": {
+    "file": "source-tile-361265-partial-coverage-sample.laz",
+    "source_url": "https://remotesensing.vlaanderen.be/download/openlidar/LiDAR_DHMV_2_V2/P7/ATL12734/LiDAR_DHMV_2_P7_ATL12734_FU_20140331_34127_3/Tiles/LiDAR_DHMV_2_P7_ATL12734_FU_20140331_34127_3_252500_161000.laz",
+    "http_status": 200,
+    "tile_id": 361265,
+    "point_count_header": 8326,
+    "las_version": "1.4",
+    "point_format": 3,
+    "compressed": true,
+    "bounds_epsg31370_xmin_ymin_xmax_ymax": [
+      252500,
+      161000,
+      252522.68,
+      161049.78
+    ],
+    "coverage_warning": "Tiny corner of one flight strip, retained to prove public numeric LAZ access. It does not cover the complete terrain crop; 37 other indexed files were not downloaded. Class counts not decoded/verified."
+  },
+  "diagnostic_not_operational_criterion": {
+    "method": "numpy.gradient at 1m spacing; atan(hypot(dx,dy)); one-sided edge derivatives",
+    "slope_degrees_percentiles_0_25_50_75_95_100": [
+      0.0,
+      3.816578714332605,
+      9.45351361681304,
+      14.587768692102534,
+      22.818645850260737,
+      54.46029046379628
+    ],
+    "fraction_above_15_degrees": 0.23007583618164062,
+    "meaning": "Geometry of the delivered belief; identifies terrain variation only. No traversability/safe-slope threshold validated."
+  },
+  "producer_sources": {
+    "product": "https://www.vlaanderen.be/datavindplaats/catalogus/digitaal-hoogtemodel-vlaanderen-ii-dtm-raster-1-m",
+    "campaign_and_classification": "https://www.vlaanderen.be/digitaal-vlaanderen/onze-diensten-en-platformen/earth-observation-data-science-eodas/het-digitaal-hoogtemodel/digitaal-hoogtemodel-vlaanderen-ii",
+    "faq": "https://www.vlaanderen.be/digitaal-vlaanderen/onze-diensten-en-platformen/earth-observation-data-science-eodas/het-digitaal-hoogtemodel/veelgestelde-vragen",
+    "source_point_portal": "https://remotesensing.vlaanderen.be/apps/openlidar/",
+    "portal_terms": "https://assets.vlaanderen.be/image/upload/v1679331485/GratisopendatalicentieVlaanderenv12_bqxu2t.pdf"
+  },
+  "file_checksums": {
+    "dhmvii_dtm_1m_veurserveld_512m.tif": {
+      "bytes": 1049964,
+      "sha256": "c2da3520b7dc6da349a353fc115d2d9a9b96d943af011e84eced96ca7a1177bc"
+    },
+    "lidar-tile-metadata.json": {
+      "bytes": 16953,
+      "sha256": "9763b51b98c0ed45c33fc5ae04abec3d44e16786c98e66bcc99dff2039bfcb64"
+    },
+    "source-tile-361265-partial-coverage-sample.laz": {
+      "bytes": 34875,
+      "sha256": "171acc99122113f1003b5c7cd4696551efd8a0b40145d06469532be4a8144910"
+    },
+    "wcs-describe-coverage.xml": {
+      "bytes": 2738,
+      "sha256": "a28b85c74553c985474a2af5ea24c292c16a2aec13d6a5e497ad7453b74d4252"
+    },
+    "dhmvii_dsm_1m_veurserveld_512m.tif": {
+      "bytes": 1049964,
+      "sha256": "71ff244638b14cdeff49ac2d237290bc37fd7c0bc181ff7d6e186a38c95e6960"
+    },
+    "wcs-describe-dsm-coverage.xml": {
+      "bytes": 2738,
+      "sha256": "529801f06906d7864454320ce9db287d7b192c5ef48a2596c5d54fef91b1121e"
+    }
+  },
+  "surface_model": {
+    "file": "dhmvii_dsm_1m_veurserveld_512m.tif",
+    "source_url": "https://geo.api.vlaanderen.be/dhmv/wcs?service=WCS&version=1.0.0&request=GetCoverage&coverage=DHMVII_DSM_1m&crs=EPSG%3A31370&bbox=252500%2C160500%2C253012%2C161012&resx=1&resy=1&format=GeoTIFF&interpolation=nearest+neighbor",
+    "retrieved_utc": "2026-11-03T14:56:14Z",
+    "http_status": 200,
+    "content_type": "image/tiff",
+    "width": 512,
+    "height": 512,
+    "bands": 1,
+    "dtype": "float32",
+    "horizontal_crs": "EPSG:31370",
+    "vertical_reference": "TAW",
+    "pixel_size_metres": [
+      1,
+      1
+    ],
+    "affine_a_b_c_d_e_f": [
+      1,
+      0,
+      252500,
+      0,
+      -1,
+      161012
+    ],
+    "nodata_declared": -9999,
+    "nodata_cells": 0,
+    "height_range_metres": [
+      134.50999450683594,
+      242.94000244140625
+    ],
+    "native_grid_description_file": "wcs-describe-dsm-coverage.xml",
+    "alignment_verification": "Dimensions, sample format, horizontal CRS, pixel scale and tiepoint match DTM. DescribeCoverage declares the same1m cell-center origin and axis offsets.",
+    "meaning": "Same-campaign modeled surface including objects. Difference from DTM is above-ground/modeling context, not independent ground-truth error or uncertainty."
+  }
+}

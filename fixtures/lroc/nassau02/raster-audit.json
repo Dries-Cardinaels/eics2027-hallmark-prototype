@@ -1,0 +1,38 @@
+{
+  "full_grid": {
+    "W": 2670,
+    "H": 2550,
+    "quality_counts": {
+      "0": 1259470,
+      "3": 144079,
+      "10": 452,
+      "11": 5976,
+      "12": 66089,
+      "13": 750662,
+      "14": 4581772
+    },
+    "finite_heights": 5549030,
+    "height_range_m": [
+      -1062.7078857421875,
+      67.3873291015625
+    ]
+  },
+  "checks": [
+    "SHA-256 and size of all five official files",
+    "DEM and CONF.IMG dimensions, projection and offsets",
+    "DEM and confidence TIFF GeoTIFF georeferencing tags equal",
+    "CONF.IMG code 0 exactly matches DEM NoData",
+    "No quality code 4 occurs anywhere in this delivered product",
+    "Native crop floats and classes copied without resampling"
+  ],
+  "browse_tiff_remapping": {
+    "0": 0,
+    "3": 1,
+    "10": 179,
+    "11": 204,
+    "12": 229,
+    "13": 255,
+    "14": 255
+  },
+  "warning": "Confidence browse TIFF merges raw classes 13 and 14; use CONF.IMG for scientific class values."
+}

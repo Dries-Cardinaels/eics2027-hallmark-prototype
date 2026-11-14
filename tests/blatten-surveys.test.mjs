@@ -1,0 +1,33 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {availableSurfaces,loadTerrain} from '../editor/data.js';
+import {createSession} from '../editor/session.js';
+import {planRoute} from '../editor/planner.js';
+import {evaluateRaster} from '../src/core/raster.js';
+
+test('the Tennmatten route traces original heights in two separate native survey grids', async t=>{
+  t.mock.method(globalThis,'fetch',async url=>new Response(await readFile(url)));
+  assert.deepEqual((await availableSurfaces('blatten')).map(v=>v.id),['ground','post-event']);
+  const post=await loadTerrain('blatten','post-event'),pre=await loadTerrain('blatten','ground');
+  assert.equal(pre.comparisonSurface.heights,post.heights);
+  assert.equal(post.comparisonSurface.heights,pre.heights);
+  assert.equal(pre.groundRGB,undefined);
+  assert.equal(post.groundRGB.length,400*400*3);
+  assert.equal(post.heights.filter(Number.isFinite).length,160000);
+  const slope=evaluateRaster(post,'slope');
+  const route=planRoute(post,{slope},{start:post.proposalStart,goal:post.proposalGoal,branch:'slope'});
+  assert.equal(route.ok,true);
+  assert.equal(route.vertices.length,443);
+  const cell=route.vertices[221];
+  assert.deepEqual(cell,{row:230,col:198});
+  const session=createSession(post,{selection:{layerId:'heights',cell}});
+  const current=session.getSnapshot();
+  assert.equal(current.heightHere.height,1454.9429931640625);
+  assert.equal(current.comparisonHeight.height,1437.5362548828125);
+  assert.deepEqual(current.comparisonHeight.cell,{row:115,col:99});
+  assert.equal(session.dispatch({type:'layer',layerId:'slope'}).sources.length,8);
+  assert.equal(session.dispatch({type:'layer',layerId:'roughness'}).sources.length,25);
+  assert.equal(pre.heights.length,40000);
+  assert.ok(pre.origins.every(o=>o==='undocumented')&&post.origins.every(o=>o==='undocumented'));
+});

@@ -1,0 +1,25 @@
+{
+  "source": "https://www.geospatial.jp/ckan/dataset/atami20210703izusan0000shizuokapref01",
+  "sourceFile": "izusanls10cmdemtrim.tif",
+  "sourceSha256": "d7141217427fa15a66d3682d20637d1cb6504ae24cc01557123ad1aab981e804",
+  "asset": "atami-20210703-dsm-crop-10cm.f32",
+  "assetSha256": "50c81643dbe4ec033e10e317e9f74aa9e5996e14d3edc8acbfd195e3e59c7ffd",
+  "width": 1250,
+  "height": 1250,
+  "colStart": 530,
+  "rowStart": 5,
+  "sourceOrigin": [
+    52046.98237225347,
+    -97220.5039069222
+  ],
+  "sourceResolution": [
+    0.10000000000000198,
+    -0.10000000000000192
+  ],
+  "nodata": -32767,
+  "horizontalCrs": "EPSG:6676",
+  "verticalReference": "Not specified in the source metadata cited here",
+  "pixelInterpretation": "Area; use pixel centres for cell assignment",
+  "sourceLicense": "CC BY 4.0 / ODbL as stated by publisher",
+  "cropRule": "Retain source pixel centres inside E [52100,52225), N [-97346,-97221). The crop contains the source float32 samples including NoData; editor generation takes the median of finite pixel-centre samples in each 1 m square."
+}

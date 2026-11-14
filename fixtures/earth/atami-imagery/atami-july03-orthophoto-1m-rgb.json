@@ -1,0 +1,26 @@
+{
+  "asset": "atami-july03-orthophoto-1m-rgb.u8",
+  "assetSha256": "968ef34bfc7462e9bf69fb46da24165dd986db6e3a90784dbf3d1784d68c7789",
+  "sourceImage": "atami-headscarp.jpg",
+  "sourceJpegSha256": "4029e04d1af5769361eac2c7e38d0b1a96af03f784c4df435fc6fba08e971004",
+  "sourceGeoTiffSha256": "c624e8e08ad22694edff25f0037d3feadb073d3c7b883b7cd34ff494c7e02f39",
+  "source": "https://www.geospatial.jp/ckan/dataset/atami20210703izusan0000shizuokapref01",
+  "sourceDate": "3 July 2021",
+  "sourceBounds": {
+    "west": 51993.90988107122,
+    "north": -97135.95518412748,
+    "east": 52333.55988107122,
+    "south": -97411.75518412748
+  },
+  "sourcePixelSizeMetres": 0.05,
+  "width": 125,
+  "height": 125,
+  "grid": {
+    "east": 52100,
+    "north": -97221,
+    "resolutionMetres": 1,
+    "horizontalCrs": "EPSG:6676"
+  },
+  "method": "For each 1 m terrain cell, copy the retained 3 July orthophoto JPEG pixel containing its projected centre. No resampling of heights and no neighbouring lidar colours.",
+  "limitations": "Display colours from the JPEG derivative, not native GeoTIFF radiometry. The retained JPEG composites original unmapped alpha pixels on charcoal. Colours do not establish DSM height coverage or accuracy."
+}

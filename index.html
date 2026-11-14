@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hallmark: Preventing Knowledge Laundering in Terrain Map Pipelines</title>
+<link rel="stylesheet" href="src/ui/style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="brand"><h1><span class="brand-name">Hallmark<span class="sr-only">:</span></span> <span class="brand-title">Terrain evidence for mobile robot supervision</span></h1></div>
+  <div class="controls" role="group" aria-label="Terrain controls">
+    <label class="header-field" for="dataset"><span>Use case</span><span class="header-select"><select id="dataset"></select></span></label>
+    <button id="show-terrain-preview" data-assets="dist/preview/manifest.js" class="text-button terrain-preview-button" aria-haspopup="dialog"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m12 3 9 5v8l-9 5-9-5V8zM3 8l9 5 9-5M12 13v8"/></svg>Surface figure</button>
+  </div>
+</header>
+<main class="layout supervisor-layout">
+  <section class="case-banner" aria-labelledby="case-title"><div><p class="eyebrow">1 · Assess terrain</p><h2 id="case-title"></h2><p id="case-task"></p></div><div class="case-context"><p id="case-scale"></p><p id="case-boundary"></p></div></section>
+  <section class="panel map-panel" aria-labelledby="map-h">
+    <div class="section-heading map-heading">
+      <div><p class="eyebrow">Terrain at the selected location</p><h2 id="map-h">Combined assessment</h2></div>
+      <fieldset class="map-view-controls" hidden>
+        <legend>Visualisation style</legend>
+        <div class="view-options">
+          <label class="view-choice"><input class="sr-only" type="radio" name="map-view" id="mode-assessment" value="assessment" checked aria-controls="map branch-map"><span id="view-values-label">Values</span></label>
+          <label class="view-choice"><input class="sr-only" type="radio" name="map-view" id="mode-origins" value="origins" aria-controls="map branch-map" aria-describedby="origin-view-help"><span id="view-origins-label">Input evidence</span></label>
+          <label id="quality-choice" class="view-choice" hidden><input class="sr-only" type="radio" name="map-view" id="mode-quality" value="quality" aria-controls="map branch-map" aria-describedby="quality-view-help"><span>Quality flags</span></label>
+        </div>
+      </fieldset>
+      <fieldset id="evidence-layer-controls" class="map-view-controls" hidden>
+        <legend>Evidence layer</legend>
+        <div class="view-options" id="evidence-layer-options" role="radiogroup" aria-label="Evidence layer"></div>
+      </fieldset>
+      <span id="evidence-layer-help" class="sr-only" aria-live="polite"></span>
+      <span id="quality-view-help" class="sr-only">Published per-cell quality status of supporting heights, separate from height origin. Select a cell for exact codes.</span>
+      <span id="origin-view-help" class="sr-only">Shows the origins of the heights supporting each result. Select a cell to inspect its inputs.</span>
+    </div>
+    <div id="quantity-controls" class="quantity-controls" role="group" aria-label="Terrain quantity"><button data-view-node="slope">Slope</button><button data-view-node="roughness">Roughness</button><button data-view-node="heights">Heights</button><button data-view-node="combined">Criteria</button></div>
+    <div class="map-meta"><p id="map-layer" class="hint"></p><label id="basemap-toggle" class="basemap-toggle" hidden><input type="checkbox" id="basemap-check"> Reference imagery</label><button id="show-source-map" class="text-button" aria-controls="map-views" aria-pressed="false">Show height evidence</button><button id="back-overview" class="text-button" hidden>Combined overview</button></div>
+    <p id="basemap-credit" class="hint basemap-credit" hidden></p>
+    <div id="spatial-workspace" class="spatial-workspace">
+    <section id="terrain-workspace" class="terrain-workspace" data-library="dist/terrain/three-controls.js" aria-label="Interactive 3D terrain" hidden>
+      <div class="terrain-toolbar"><label>Surface colour <select id="terrain-paint"><option value="relief">Delivered elevation</option><option id="terrain-paint-value" value="values">Calculated values</option><option id="terrain-paint-evidence" value="evidence">Supporting evidence</option></select></label><label>Vertical scale <select id="terrain-scale"><option value="1">×1 · true proportions</option><option value="3">×3 · emphasise relief</option></select></label></div>
+      <div class="terrain-canvas-wrap"><div id="terrain-canvas-host" class="terrain-canvas-host"></div><span id="terrain-layer-label" class="terrain-layer-label"></span><span id="terrain-scale-badge" class="terrain-scale-badge"></span><div class="terrain-camera-controls"><button id="terrain-reset" title="Reset terrain camera">Oblique view</button><button id="terrain-top" title="View terrain from above">Top view</button></div><div class="terrain-gesture-help">Drag to orbit · scroll to zoom · right-drag to pan · click to inspect</div></div>
+      <div class="terrain-readout"><p id="terrain-status" role="status" aria-live="polite"></p><label><input id="terrain-mesh" type="checkbox"> Show triangle mesh</label></div>
+      <div id="terrain-legend" class="legend terrain-legend"></div><p id="terrain-extent" class="hint"></p><p id="terrain-caption" class="terrain-data-caption"></p>
+    </section>
+    <div id="map-views" class="map-views" data-comparison="true">
+      <section id="primary-map-panel" class="map-view" aria-labelledby="map-h">
+        <h3 id="map-primary-title" class="branch-map-title" hidden>Slope</h3>
+        <svg id="map" tabindex="0" aria-label="Terrain output map" aria-describedby="map-layer map-keyboard-help"><g id="map-content"></g><g id="map-selection" pointer-events="none"></g></svg>
+        <div id="map-legend" class="legend"></div>
+      </section>
+      <section id="secondary-map-panel" class="map-view" aria-labelledby="map-secondary-title" hidden>
+        <h3 id="map-secondary-title" class="branch-map-title">Roughness</h3>
+        <svg id="branch-map" tabindex="0" aria-label="Roughness branch map" aria-describedby="map-layer map-keyboard-help"><image id="branch-map-basemap" class="map-basemap" x="0" y="0" width="360" height="360" preserveAspectRatio="none" hidden></image><g id="branch-map-content"></g><g id="branch-map-selection" pointer-events="none"></g></svg>
+        <div id="source-map-legend" class="legend" hidden></div>
+      </section>
+    </div>
+    
+    </div>
+    <span id="map-keyboard-help" class="sr-only">Click a cell or use arrow keys to move the selected location. Both maps and the inspector share this selection.</span>
+  </section>
+  <section class="panel inspection-panel" aria-labelledby="selected-title">
+    <div class="section-heading inspection-heading"><div class="inspection-location"><p class="inspection-label">2 · Inspect location</p><span id="selected-location" class="location-tag"></span></div><div class="inspector-actions"><details class="limit-editor"><summary>Edit limits</summary><p class="hint">Illustrative criteria; not vehicle capability limits. Both comparison locations use these settings.</p><div class="limits"><label>Slope limit <span><input id="slope-limit" type="number" step="0.5" min="0" max="90"> °</span></label><label>Roughness limit <span><input id="rough-limit" type="number" step="0.01" min="0" max="1000"> m</span></label><label id="illumination-limit-control" hidden>Minimum sunlight <span><input id="illumination-limit" type="number" step="5" min="0" max="100"> %</span></label></div></details><button id="show-details" class="text-button" aria-haspopup="dialog">Full record ↗</button></div></div>
+    <div id="selection-summary" aria-live="polite"></div><button id="pin-location" class="primary-button">Pin location for comparison</button>
+    <div class="evidence-layout">
+      <section id="results-panel" class="results-panel" aria-labelledby="results-h">
+        <div class="subheading"><h3 id="results-h">Criteria at this cell</h3></div>
+        <div id="results"></div>
+        <p id="provenance-note" class="provenance-note" hidden>Support labels persist after thresholding. They describe provenance, not numerical error.</p>
+      </section>
+      <section id="illumination-panel" class="illumination-panel" aria-label="Illumination period and time samples" hidden></section>
+      <section id="step-support" class="step-support" aria-label="Support for the selected step" hidden></section>
+      <div id="selection-evidence" class="selection-evidence" aria-live="polite"></div><section id="source-panel" class="source-panel" aria-labelledby="src-h">
+        <div class="subheading"><h3 id="src-h">Heights used by both branches</h3><span id="source-encoding" class="hint">Individual height origins · m</span></div>
+        <fieldset class="footprint-controls" hidden><legend>Show inputs for</legend><div class="view-options">
+          <label class="view-choice"><input class="sr-only" id="footprint-node" type="radio" name="footprint" value="node" checked aria-controls="sources" aria-describedby="source-context"><span id="footprint-node-label">Selected step</span></label>
+          <label class="view-choice"><input class="sr-only" id="footprint-slope" type="radio" name="footprint" value="slope" aria-controls="sources" aria-describedby="source-context"><span>Slope</span></label>
+          <label class="view-choice"><input class="sr-only" id="footprint-roughness" type="radio" name="footprint" value="roughness" aria-controls="sources" aria-describedby="source-context"><span>Roughness</span></label>
+        </div></fieldset>
+        <p id="source-context" class="hint"></p>
+        <div id="source-map-frame" class="source-map-frame"><svg id="sources" role="img" aria-label="Close-up of declared source heights with values and origins" aria-describedby="source-context source-composition support-note"></svg><svg id="sun-profile" class="sun-profile" role="img" aria-label="Terrain profile and Sun line" hidden></svg></div>
+        <p id="source-composition" class="source-composition" hidden></p>
+        <div id="source-legend" class="legend"></div>
+        <p id="support-note" class="support-note" hidden></p>
+      </section>
+
+    </div>
+<details class="processing-details"><summary>Follow the calculation</summary>  <section class="panel graph-panel" aria-labelledby="graph-h">
+    <div class="graph-heading"><h2 id="graph-h">Processing graph</h2><p id="graph-selection" class="hint"></p><p id="graph-help" class="caption">Select a step to update the map.<span class="sr-only"> Arrow keys move between steps.</span></p></div>
+    <div class="graph-scroll" role="radiogroup" aria-labelledby="graph-h" aria-describedby="graph-help"><svg id="graph" viewBox="0 0 630 130" role="none"></svg></div>
+  </section>
+</details>
+  </section>
+<section id="comparison-panel" class="panel comparison-panel" aria-labelledby="comparison-title"><div class="comparison-heading"><div><p class="eyebrow">3 · Compare alternatives</p><h2 id="comparison-title">Compare locations</h2></div><div><button id="swap-locations" class="text-button" hidden>Swap A and B</button><button id="clear-comparison" class="text-button" hidden>Clear comparison</button></div></div><div id="comparison-content" aria-live="polite"></div></section>
+</main>
+<dialog id="details-dialog" aria-labelledby="ins-h"><div class="dialog-heading"><h2 id="ins-h">Full derivation record</h2><form method="dialog"><button class="text-button" autofocus>Close</button></form></div><div id="inspect"></div></dialog>
+<dialog id="terrain-dialog" aria-labelledby="terrain-preview-title">
+  <div class="dialog-heading"><div><p class="eyebrow">Reference and reconstruction</p><h2 id="terrain-preview-title">Terrain and heightmap</h2></div><form method="dialog"><button class="text-button" autofocus>Close preview</button></form></div>
+  <div class="terrain-preview-controls">
+    <label>Terrain <select id="preview-delivery"></select></label>
+    <label>View <select id="preview-view"><option id="preview-sampled-option" value="sampled">Scene → sampled heightmap</option><option value="comparison">Scene → delivered heightmap</option><option value="3d">Terrain only</option><option id="preview-shadow-option" value="shadows">Acquisition shadow map</option></select></label>
+    <label id="preview-scale-control">Vertical scale <select id="preview-scale"><option value="1" selected>×1 · true proportions</option><option value="3">×3 · emphasise relief</option></select></label>
+  </div>
+  <p id="preview-status" class="hint" role="status" aria-live="polite" hidden></p>
+  <button id="preview-retry" class="text-button" hidden>Retry preview</button>
+  <figure class="terrain-preview-figure"><img id="preview-image" decoding="async" alt="" width="1600" height="992"></figure>
+  <p id="preview-caption" class="hint"></p>
+  <p class="preview-boundary">Preview controls do not change the selected delivery, cell or assessment.</p>
+</dialog>
+<nav id="variant-switcher" class="variant-switcher" aria-label="Prototype view experiment"><span class="variant-intro">View experiment</span><button id="variant-previous" aria-label="Previous view variant">←</button><div><strong id="variant-label">3D terrain workspace</strong><span id="variant-state">1 / 3</span></div><button id="variant-next" aria-label="Next view variant">→</button></nav>
+<script type="module" src="src/ui/app.js"></script>
+</body>
+</html>

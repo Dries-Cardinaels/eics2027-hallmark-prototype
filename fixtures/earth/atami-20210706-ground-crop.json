@@ -1,0 +1,51 @@
+{
+  "source": "https://opendata.pref.shizuoka.jp/dataset/8698.html",
+  "downloadUrl": "https://gsic-opendata.s3.ap-northeast-1.amazonaws.com/local-gov/shizuoka/point-cloud/2021/20210703-atami-dronealb/20210703ATAMI/Izusan_UAV-LiDAR_20210706_Ground.zip",
+  "sourceFile": "Izusan_UAV-LiDAR_20210706_Ground.las",
+  "sourceArchiveSha256": "b2fda9bc86945cd605751577f91db69fa62bbc53ab8df3f1a5f7d74ded1efc06",
+  "sourcePointCount": 6638160,
+  "asset": "atami-20210706-ground-crop.las",
+  "assetSha256": "17288eeb538a67687becb7675b9abd348df441390e54786a29207fdb5abdf037",
+  "pointCount": 230413,
+  "bounds": {
+    "west": 52100,
+    "east": 52225,
+    "south": -97346,
+    "north": -97221
+  },
+  "cropRule": "Source points with west/south edges included and east/north edges excluded; original point records, scale and offsets retained; LAS count, return histogram and bounds updated.",
+  "horizontalCrs": "LAS header has no CRS record; EPSG:6676 assumed for alignment with DSM",
+  "grid": {
+    "width": 125,
+    "height": 125,
+    "resolutionMetres": 1
+  },
+  "support": {
+    "totalCells": 15625,
+    "groundCells": 13160,
+    "july03DsmCells": 8891,
+    "jointCells": 8718
+  },
+  "originalFootprint": {
+    "west": 52155,
+    "east": 52220,
+    "south": -97336,
+    "north": -97271,
+    "rowOffset": 50,
+    "colOffset": 55
+  },
+  "inspectionCellCentres": {
+    "gap": {
+      "east": 52142.5,
+      "north": -97261.5
+    },
+    "start": {
+      "east": 52142.5,
+      "north": -97236.5
+    },
+    "goal": {
+      "east": 52187.5,
+      "north": -97306.5
+    }
+  }
+}

@@ -1,0 +1,206 @@
+{
+  "schemaVersion": 1,
+  "caseId": "connecting-ridge",
+  "title": "Connecting Ridge \u2014 supplied LOLA height RMS",
+  "productUrl": "https://pgda.gsfc.nasa.gov/products/78",
+  "retrievedAt": "2026-11-05",
+  "window": {
+    "col_off": 1300,
+    "row_off": 1500,
+    "width": 256,
+    "height": 256
+  },
+  "sourceWidth": 3200,
+  "sourceHeight": 3200,
+  "postingM": 5,
+  "encoding": "little-endian float32, row-major, no header",
+  "referenceFrame": "MOON_ME, JPL DE421",
+  "verticalReference": "Delivered surface height Z in metres; no vertical datum transformation performed. Source README does not separately specify vertical reference.",
+  "processing": "Native window only; no reprojection, resampling or scaling.",
+  "uncertaintyInterpretation": "Supplier total surface-height RMS error from 100 modeled error realizations; includes orbital, interpolation, range and sampling effects. Not propagated to our slope/roughness/illumination, not a probability.",
+  "layers": {
+    "height": {
+      "url": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site01/Site01_final_adj_5mpp_surf.tif",
+      "originalFilename": "Site01_final_adj_5mpp_surf.tif",
+      "file": "height.f32",
+      "units": "m",
+      "meaning": "Surface-interpolated LDEM elevation",
+      "sourceSha256": "3ba7b97cb00a2bcf21189c3aeb535f65afc21207154ab9f0d43c5bdc1f7e747e",
+      "sourceBytes": 40980810,
+      "cropSha256": "49fddabe1d925b5ad0c7353ad952276bee74d1e78b009a14e5de0a19b8b0f99b",
+      "cropBytes": 262144,
+      "sourceDtype": "float32",
+      "sourceNodata": "NaN",
+      "validCount": 65536,
+      "missingCount": 0,
+      "min": 1671.8094482421875,
+      "max": 1959.4962158203125,
+      "quantiles": {
+        "0.05": 1763.5770263671875,
+        "0.5": 1910.7264404296875,
+        "0.95": 1954.9334716796875
+      },
+      "sourceTransform": [
+        5.0,
+        0.0,
+        -19000.0,
+        0.0,
+        -5.0,
+        -4000.0
+      ],
+      "sourceCrsWkt": "PROJCS[\"unnamed\",GEOGCS[\"unnamed ellipse\",DATUM[\"unknown\",SPHEROID[\"unnamed\",1737400,0]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Polar_Stereographic\"],PARAMETER[\"latitude_of_origin\",-90],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1],AXIS[\"Easting\",NORTH],AXIS[\"Northing\",NORTH]]"
+    },
+    "heightRms": {
+      "url": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site01/Site01_final_adj_5mpp_toterr.tif",
+      "originalFilename": "Site01_final_adj_5mpp_toterr.tif",
+      "file": "heightRms.f32",
+      "units": "m",
+      "meaning": "Supplier total Z RMS error",
+      "sourceSha256": "cf2cf52f52d2aa51e60d058010d10b0ebfb1d3e920f5a2b9a46eb6c51054ab1c",
+      "sourceBytes": 40980810,
+      "cropSha256": "7d4b640704360cd01acfef854d9ffcb57ecebb59f8a359c6b68db10e6a862b3c",
+      "cropBytes": 262144,
+      "sourceDtype": "float32",
+      "sourceNodata": "NaN",
+      "validCount": 65536,
+      "missingCount": 0,
+      "min": 0.0704401284456253,
+      "max": 2.695146083831787,
+      "quantiles": {
+        "0.05": 0.18853312730789185,
+        "0.5": 0.39632856845855713,
+        "0.95": 0.7913316488265991
+      },
+      "sourceTransform": [
+        5.0,
+        0.0,
+        -19000.0,
+        0.0,
+        -5.0,
+        -4000.0
+      ],
+      "sourceCrsWkt": "PROJCS[\"unnamed\",GEOGCS[\"unnamed ellipse\",DATUM[\"unknown\",SPHEROID[\"unnamed\",1737400,0]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Polar_Stereographic\"],PARAMETER[\"latitude_of_origin\",-90],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1],AXIS[\"Easting\",NORTH],AXIS[\"Northing\",NORTH]]"
+    },
+    "counts": {
+      "url": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site01/Site01_final_adj_5mpp_ldec.tif",
+      "originalFilename": "Site01_final_adj_5mpp_ldec.tif",
+      "file": "counts.f32",
+      "units": "returns/pixel",
+      "meaning": "Number of LOLA returns in each pixel",
+      "sourceSha256": "16d6ed21020ad48fa71d94e7437492acf5bf04118f52bcd292f57f22ead4cd23",
+      "sourceBytes": 40980744,
+      "cropSha256": "c8fac65fe7bbb3ec555306b4e2cfd2985d827250c8743d426f034db41b69909e",
+      "cropBytes": 262144,
+      "sourceDtype": "float32",
+      "sourceNodata": "NaN",
+      "validCount": 65536,
+      "missingCount": 0,
+      "min": 0.0,
+      "max": 3.0,
+      "quantiles": {
+        "0.05": 0.0,
+        "0.5": 0.0,
+        "0.95": 1.0
+      },
+      "sourceTransform": [
+        5.0,
+        0.0,
+        -19000.0,
+        0.0,
+        -5.0,
+        -4000.0
+      ],
+      "sourceCrsWkt": "PROJCS[\"unnamed\",GEOGCS[\"unnamed ellipse\",DATUM[\"unknown\",SPHEROID[\"unnamed\",1737400,0]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Polar_Stereographic\"],PARAMETER[\"latitude_of_origin\",-90],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1],AXIS[\"Easting\",NORTH],AXIS[\"Northing\",NORTH]]"
+    }
+  },
+  "cropTransform": [
+    5.0,
+    0.0,
+    -12500.0,
+    0.0,
+    -5.0,
+    -11500.0
+  ],
+  "sampleSha256": "02d49d2788aa5b59a176b0d98528060d171a4c5af38353dce3ff31ea788d6dcf",
+  "workedExample": {
+    "kind": "illustrative candidate path, not validated rover route",
+    "vertices": [
+      [
+        32,
+        128
+      ],
+      [
+        224,
+        128
+      ]
+    ],
+    "samples": [
+      {
+        "column": 32,
+        "row": 128,
+        "sourceIndex": 32800,
+        "heightM": 1842.344970703125,
+        "heightRmsM": 0.3947029411792755,
+        "returns": 0.0
+      },
+      {
+        "column": 80,
+        "row": 128,
+        "sourceIndex": 32848,
+        "heightM": 1885.3917236328125,
+        "heightRmsM": 0.1782950907945633,
+        "returns": 0.0
+      },
+      {
+        "column": 128,
+        "row": 128,
+        "sourceIndex": 32896,
+        "heightM": 1918.23779296875,
+        "heightRmsM": 0.4600980877876282,
+        "returns": 1.0
+      },
+      {
+        "column": 176,
+        "row": 128,
+        "sourceIndex": 32944,
+        "heightM": 1935.353759765625,
+        "heightRmsM": 0.2732195556163788,
+        "returns": 1.0
+      },
+      {
+        "column": 224,
+        "row": 128,
+        "sourceIndex": 32992,
+        "heightM": 1952.0093994140625,
+        "heightRmsM": 0.2074396163225174,
+        "returns": 1.0
+      }
+    ],
+    "firstZeroCountFiniteHeightRms": {
+      "column": 0,
+      "row": 0,
+      "sourceIndex": 0,
+      "heightM": 1671.8094482421875,
+      "heightRmsM": 0.6303908228874207,
+      "returns": 0.0
+    },
+    "zeroCountCells": 60618,
+    "positiveCountCells": 4918,
+    "minimumRms": {
+      "column": 162,
+      "row": 50,
+      "sourceIndex": 12962,
+      "heightM": 1890.7021484375,
+      "heightRmsM": 0.0704401284456253,
+      "returns": 2.0
+    },
+    "maximumRms": {
+      "column": 159,
+      "row": 2,
+      "sourceIndex": 671,
+      "heightM": 1846.538330078125,
+      "heightRmsM": 2.695146083831787,
+      "returns": 0.0
+    }
+  }
+}

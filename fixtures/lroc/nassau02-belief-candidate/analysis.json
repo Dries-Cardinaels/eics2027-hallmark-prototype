@@ -1,0 +1,717 @@
+{
+  "status": "Candidate extracted and independently evaluated; not imported into active prototype.",
+  "source_product": "NAC_DTM_NASSAU02 v1.9",
+  "source_url": "https://data.lroc.im-ldi.com/lroc/view_rdr/NAC_DTM_NASSAU02",
+  "verified_source_sha256": {
+    "NAC_DTM_NASSAU02.TIF": "69688c434ac593d54a9ae2897d96044dbcebfb5ad5b540ec5becf74e1059dfe4",
+    "NAC_DTM_NASSAU02_CONF.IMG": "3e6fefcbc1b9d21e7d1834862885c1e8c9c3148a5d4d4fc4316b78b039cd9d9e"
+  },
+  "crop": {
+    "row_start_zero_based": 1311,
+    "col_start_zero_based": 2063,
+    "W": 50,
+    "H": 50,
+    "res_m": 4
+  },
+  "selection_policy": "Full-raster search: 14.5\u201315.5 degrees, at least four suspicious slope inputs, all-finite 50x50 crop. Prefer more suspicious inputs, then distance to15 degrees, then row/column; retain spatially separated candidates. Purposive illustrative selection, not representative sampling or a validated rover threshold.",
+  "selected": {
+    "analysis_cell": [
+      23,
+      23
+    ],
+    "product_height_cell_zero_based": [
+      1336,
+      2088
+    ],
+    "slope_deg": 14.99246742611901,
+    "slope_input_count": 8,
+    "suspicious_slope_inputs": 7,
+    "roughness_m": 1.3306790513477074,
+    "suspicious_roughness_inputs": 15,
+    "roughness_input_count": 25,
+    "inputs": [
+      {
+        "row": 24,
+        "col": 24,
+        "height_m": -183.8812255859375,
+        "code": 3
+      },
+      {
+        "row": 24,
+        "col": 25,
+        "height_m": -185.18655395507812,
+        "code": 3
+      },
+      {
+        "row": 24,
+        "col": 26,
+        "height_m": -185.94187927246094,
+        "code": 3
+      },
+      {
+        "row": 25,
+        "col": 24,
+        "height_m": -183.67430114746094,
+        "code": 3
+      },
+      {
+        "row": 25,
+        "col": 26,
+        "height_m": -185.86619567871094,
+        "code": 3
+      },
+      {
+        "row": 26,
+        "col": 24,
+        "height_m": -183.38330078125,
+        "code": 3
+      },
+      {
+        "row": 26,
+        "col": 25,
+        "height_m": -184.84571838378906,
+        "code": 14
+      },
+      {
+        "row": 26,
+        "col": 26,
+        "height_m": -185.3164825439453,
+        "code": 3
+      }
+    ]
+  },
+  "nearby_successful_correlation_examples": [
+    {
+      "analysis_cell": [
+        25,
+        19
+      ],
+      "slope_deg": 13.653295579163032,
+      "flagged_inputs": 0,
+      "distance_m": 17.88854381999832
+    },
+    {
+      "analysis_cell": [
+        26,
+        19
+      ],
+      "slope_deg": 14.54415985129793,
+      "flagged_inputs": 0,
+      "distance_m": 20
+    },
+    {
+      "analysis_cell": [
+        24,
+        16
+      ],
+      "slope_deg": 13.711165544672712,
+      "flagged_inputs": 0,
+      "distance_m": 28.284271247461902
+    },
+    {
+      "analysis_cell": [
+        25,
+        16
+      ],
+      "slope_deg": 14.036691142706525,
+      "flagged_inputs": 0,
+      "distance_m": 29.120439557122076
+    }
+  ],
+  "neighbourhood": [
+    {
+      "analysis_cell": [
+        20,
+        20
+      ],
+      "product_height_cell_zero_based": [
+        1333,
+        2085
+      ],
+      "slope_deg": 11.702977944059244,
+      "flagged_inputs": 2
+    },
+    {
+      "analysis_cell": [
+        20,
+        21
+      ],
+      "product_height_cell_zero_based": [
+        1333,
+        2086
+      ],
+      "slope_deg": 11.029685354617737,
+      "flagged_inputs": 1
+    },
+    {
+      "analysis_cell": [
+        20,
+        22
+      ],
+      "product_height_cell_zero_based": [
+        1333,
+        2087
+      ],
+      "slope_deg": 11.659369263455687,
+      "flagged_inputs": 0
+    },
+    {
+      "analysis_cell": [
+        20,
+        23
+      ],
+      "product_height_cell_zero_based": [
+        1333,
+        2088
+      ],
+      "slope_deg": 11.255418450605175,
+      "flagged_inputs": 0
+    },
+    {
+      "analysis_cell": [
+        20,
+        24
+      ],
+      "product_height_cell_zero_based": [
+        1333,
+        2089
+      ],
+      "slope_deg": 9.136673218684484,
+      "flagged_inputs": 0
+    },
+    {
+      "analysis_cell": [
+        20,
+        25
+      ],
+      "product_height_cell_zero_based": [
+        1333,
+        2090
+      ],
+      "slope_deg": 7.530082346444203,
+      "flagged_inputs": 0
+    },
+    {
+      "analysis_cell": [
+        20,
+        26
+      ],
+      "product_height_cell_zero_based": [
+        1333,
+        2091
+      ],
+      "slope_deg": 5.839378967725467,
+      "flagged_inputs": 0
+    },
+    {
+      "analysis_cell": [
+        21,
+        20
+      ],
+      "product_height_cell_zero_based": [
+        1334,
+        2085
+      ],
+      "slope_deg": 12.560578578837456,
+      "flagged_inputs": 2
+    },
+    {
+      "analysis_cell": [
+        21,
+        21
+      ],
+      "product_height_cell_zero_based": [
+        1334,
+        2086
+      ],
+      "slope_deg": 12.60095041916305,
+      "flagged_inputs": 3
+    },
+    {
+      "analysis_cell": [
+        21,
+        22
+      ],
+      "product_height_cell_zero_based": [
+        1334,
+        2087
+      ],
+      "slope_deg": 13.63564370405653,
+      "flagged_inputs": 3
+    },
+    {
+      "analysis_cell": [
+        21,
+        23
+      ],
+      "product_height_cell_zero_based": [
+        1334,
+        2088
+      ],
+      "slope_deg": 12.76491828890361,
+      "flagged_inputs": 3
+    },
+    {
+      "analysis_cell": [
+        21,
+        24
+      ],
+      "product_height_cell_zero_based": [
+        1334,
+        2089
+      ],
+      "slope_deg": 9.535985759039434,
+      "flagged_inputs": 2
+    },
+    {
+      "analysis_cell": [
+        21,
+        25
+      ],
+      "product_height_cell_zero_based": [
+        1334,
+        2090
+      ],
+      "slope_deg": 7.586841456996531,
+      "flagged_inputs": 1
+    },
+    {
+      "analysis_cell": [
+        21,
+        26
+      ],
+      "product_height_cell_zero_based": [
+        1334,
+        2091
+      ],
+      "slope_deg": 5.065611147141131,
+      "flagged_inputs": 0
+    },
+    {
+      "analysis_cell": [
+        22,
+        20
+      ],
+      "product_height_cell_zero_based": [
+        1335,
+        2085
+      ],
+      "slope_deg": 12.973405762775371,
+      "flagged_inputs": 3
+    },
+    {
+      "analysis_cell": [
+        22,
+        21
+      ],
+      "product_height_cell_zero_based": [
+        1335,
+        2086
+      ],
+      "slope_deg": 14.130776832278602,
+      "flagged_inputs": 4
+    },
+    {
+      "analysis_cell": [
+        22,
+        22
+      ],
+      "product_height_cell_zero_based": [
+        1335,
+        2087
+      ],
+      "slope_deg": 15.845187124171684,
+      "flagged_inputs": 4
+    },
+    {
+      "analysis_cell": [
+        22,
+        23
+      ],
+      "product_height_cell_zero_based": [
+        1335,
+        2088
+      ],
+      "slope_deg": 14.24275922905942,
+      "flagged_inputs": 4
+    },
+    {
+      "analysis_cell": [
+        22,
+        24
+      ],
+      "product_height_cell_zero_based": [
+        1335,
+        2089
+      ],
+      "slope_deg": 9.170785284374212,
+      "flagged_inputs": 2
+    },
+    {
+      "analysis_cell": [
+        22,
+        25
+      ],
+      "product_height_cell_zero_based": [
+        1335,
+        2090
+      ],
+      "slope_deg": 7.059262014539552,
+      "flagged_inputs": 3
+    },
+    {
+      "analysis_cell": [
+        22,
+        26
+      ],
+      "product_height_cell_zero_based": [
+        1335,
+        2091
+      ],
+      "slope_deg": 5.3689555278904955,
+      "flagged_inputs": 1
+    },
+    {
+      "analysis_cell": [
+        23,
+        20
+      ],
+      "product_height_cell_zero_based": [
+        1336,
+        2085
+      ],
+      "slope_deg": 13.332058382963318,
+      "flagged_inputs": 3
+    },
+    {
+      "analysis_cell": [
+        23,
+        21
+      ],
+      "product_height_cell_zero_based": [
+        1336,
+        2086
+      ],
+      "slope_deg": 15.02146246509898,
+      "flagged_inputs": 5
+    },
+    {
+      "analysis_cell": [
+        23,
+        22
+      ],
+      "product_height_cell_zero_based": [
+        1336,
+        2087
+      ],
+      "slope_deg": 17.54710070710451,
+      "flagged_inputs": 6
+    },
+    {
+      "analysis_cell": [
+        23,
+        23
+      ],
+      "product_height_cell_zero_based": [
+        1336,
+        2088
+      ],
+      "slope_deg": 14.99246742611901,
+      "flagged_inputs": 7
+    },
+    {
+      "analysis_cell": [
+        23,
+        24
+      ],
+      "product_height_cell_zero_based": [
+        1336,
+        2089
+      ],
+      "slope_deg": 8.822359250888452,
+      "flagged_inputs": 4
+    },
+    {
+      "analysis_cell": [
+        23,
+        25
+      ],
+      "product_height_cell_zero_based": [
+        1336,
+        2090
+      ],
+      "slope_deg": 8.029819188737843,
+      "flagged_inputs": 6
+    },
+    {
+      "analysis_cell": [
+        23,
+        26
+      ],
+      "product_height_cell_zero_based": [
+        1336,
+        2091
+      ],
+      "slope_deg": 8.205324623512016,
+      "flagged_inputs": 2
+    },
+    {
+      "analysis_cell": [
+        24,
+        20
+      ],
+      "product_height_cell_zero_based": [
+        1337,
+        2085
+      ],
+      "slope_deg": 13.946043790323989,
+      "flagged_inputs": 3
+    },
+    {
+      "analysis_cell": [
+        24,
+        21
+      ],
+      "product_height_cell_zero_based": [
+        1337,
+        2086
+      ],
+      "slope_deg": 15.06103864711936,
+      "flagged_inputs": 4
+    },
+    {
+      "analysis_cell": [
+        24,
+        22
+      ],
+      "product_height_cell_zero_based": [
+        1337,
+        2087
+      ],
+      "slope_deg": 17.520424218961132,
+      "flagged_inputs": 5
+    },
+    {
+      "analysis_cell": [
+        24,
+        23
+      ],
+      "product_height_cell_zero_based": [
+        1337,
+        2088
+      ],
+      "slope_deg": 15.286937132386063,
+      "flagged_inputs": 6
+    },
+    {
+      "analysis_cell": [
+        24,
+        24
+      ],
+      "product_height_cell_zero_based": [
+        1337,
+        2089
+      ],
+      "slope_deg": 10.868813373664834,
+      "flagged_inputs": 5
+    },
+    {
+      "analysis_cell": [
+        24,
+        25
+      ],
+      "product_height_cell_zero_based": [
+        1337,
+        2090
+      ],
+      "slope_deg": 10.064744957852364,
+      "flagged_inputs": 6
+    },
+    {
+      "analysis_cell": [
+        24,
+        26
+      ],
+      "product_height_cell_zero_based": [
+        1337,
+        2091
+      ],
+      "slope_deg": 9.718672781862477,
+      "flagged_inputs": 3
+    },
+    {
+      "analysis_cell": [
+        25,
+        20
+      ],
+      "product_height_cell_zero_based": [
+        1338,
+        2085
+      ],
+      "slope_deg": 15.036518284968418,
+      "flagged_inputs": 3
+    },
+    {
+      "analysis_cell": [
+        25,
+        21
+      ],
+      "product_height_cell_zero_based": [
+        1338,
+        2086
+      ],
+      "slope_deg": 15.442324227732133,
+      "flagged_inputs": 3
+    },
+    {
+      "analysis_cell": [
+        25,
+        22
+      ],
+      "product_height_cell_zero_based": [
+        1338,
+        2087
+      ],
+      "slope_deg": 16.53361863736569,
+      "flagged_inputs": 5
+    },
+    {
+      "analysis_cell": [
+        25,
+        23
+      ],
+      "product_height_cell_zero_based": [
+        1338,
+        2088
+      ],
+      "slope_deg": 14.45855394232681,
+      "flagged_inputs": 4
+    },
+    {
+      "analysis_cell": [
+        25,
+        24
+      ],
+      "product_height_cell_zero_based": [
+        1338,
+        2089
+      ],
+      "slope_deg": 10.98975669601896,
+      "flagged_inputs": 6
+    },
+    {
+      "analysis_cell": [
+        25,
+        25
+      ],
+      "product_height_cell_zero_based": [
+        1338,
+        2090
+      ],
+      "slope_deg": 10.084668643362056,
+      "flagged_inputs": 6
+    },
+    {
+      "analysis_cell": [
+        25,
+        26
+      ],
+      "product_height_cell_zero_based": [
+        1338,
+        2091
+      ],
+      "slope_deg": 9.433096282792098,
+      "flagged_inputs": 4
+    },
+    {
+      "analysis_cell": [
+        26,
+        20
+      ],
+      "product_height_cell_zero_based": [
+        1339,
+        2085
+      ],
+      "slope_deg": 15.962823536839895,
+      "flagged_inputs": 2
+    },
+    {
+      "analysis_cell": [
+        26,
+        21
+      ],
+      "product_height_cell_zero_based": [
+        1339,
+        2086
+      ],
+      "slope_deg": 16.731755802612344,
+      "flagged_inputs": 1
+    },
+    {
+      "analysis_cell": [
+        26,
+        22
+      ],
+      "product_height_cell_zero_based": [
+        1339,
+        2087
+      ],
+      "slope_deg": 16.810686914275713,
+      "flagged_inputs": 3
+    },
+    {
+      "analysis_cell": [
+        26,
+        23
+      ],
+      "product_height_cell_zero_based": [
+        1339,
+        2088
+      ],
+      "slope_deg": 14.33239525409168,
+      "flagged_inputs": 3
+    },
+    {
+      "analysis_cell": [
+        26,
+        24
+      ],
+      "product_height_cell_zero_based": [
+        1339,
+        2089
+      ],
+      "slope_deg": 10.826746626332675,
+      "flagged_inputs": 4
+    },
+    {
+      "analysis_cell": [
+        26,
+        25
+      ],
+      "product_height_cell_zero_based": [
+        1339,
+        2090
+      ],
+      "slope_deg": 9.685269825176121,
+      "flagged_inputs": 3
+    },
+    {
+      "analysis_cell": [
+        26,
+        26
+      ],
+      "product_height_cell_zero_based": [
+        1339,
+        2091
+      ],
+      "slope_deg": 8.93479577792721,
+      "flagged_inputs": 2
+    }
+  ],
+  "boundaries": [
+    "15 degrees is an illustrative configuration, not a vehicle capability.",
+    "Code3 means suspicious; it does not supply error magnitude, a distribution or a probability of traversability.",
+    "This analysis identifies consequences for interpreting a belief-derived assessment; no true terrain error or operator effect has been established.",
+    "Native crop and all numeric values are retained; no resampling, filtering or correction."
+  ]
+}
