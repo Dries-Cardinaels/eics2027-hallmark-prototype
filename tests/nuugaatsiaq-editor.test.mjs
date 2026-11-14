@@ -1,10 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync,mkdtempSync,rmSync} from 'node:fs';
+import {readFileSync,mkdtempSync,rmSync,existsSync} from 'node:fs';
 import {readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {tmpdir} from 'node:os';
-import {join} from 'node:path';
+import {join,resolve} from 'node:path';
+import {fileURLToPath} from 'node:url';
 import {prepareNuugaatsiaqEditorData} from '../tools/prepare-nuugaatsiaq-editor-data.mjs';
 import {availableSurfaces,loadTerrain} from '../editor/data.js';
 import {initialViewState,preferredSurface} from '../editor/view-state.js';
@@ -36,7 +37,14 @@ async function load(t){
 const ring=JSON.parse(readFileSync(new URL('land-context.json',fixture))).coastlineLandRing;
 function onLand({row:r,col:c}){let inside=false;for(let i=0,j=ring.length-1;i<ring.length;j=i++){const [ri,ci]=ring[i],[rj,cj]=ring[j];if((ri>r)!==(rj>r)&&c<(cj-ci)*(r-ri)/(rj-ri)+ci)inside=!inside;}return inside;}
 
-test('Nuugaatsiaq preparation is offline, deterministic and preserves every native DEM/mask/matchtag sample',async()=>{
+// Raw supplier downloads are optional; retained-fixture tests below always run.
+const sourceDirectory=process.env.HALLMARK_NUUGAATSIAQ_SOURCE ||
+ resolve(fileURLToPath(new URL('../local-data/nuugaatsiaq-20170619/',import.meta.url)));
+const missingRawSources=Object.values(m.rasters).some(asset=>!existsSync(join(sourceDirectory,asset.source)));
+test('Nuugaatsiaq preparation is offline, deterministic and preserves every native DEM/mask/matchtag sample',{
+ skip: !process.env.HALLMARK_NUUGAATSIAQ_SOURCE && missingRawSources
+  ? 'Set HALLMARK_NUUGAATSIAQ_SOURCE to verify optional original supplier downloads' : false,
+},async()=>{
  const out=mkdtempSync(join(tmpdir(),'hallmark-nuugaatsiaq-'));
  try{
   const catalog=await prepareNuugaatsiaqEditorData(out);

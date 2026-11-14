@@ -5,7 +5,7 @@ import {fileURLToPath} from 'node:url';
 import {resolve,dirname,join} from 'node:path';
 import {fromFile} from 'geotiff';
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
-const source=resolve(root,'../demo/research/sources/nuugaatsiaq-20170619');
+const source=resolve(process.env.HALLMARK_NUUGAATSIAQ_SOURCE || resolve(root,'local-data/nuugaatsiaq-20170619'));
 const fixture=join(root,'fixtures/earth/nuugaatsiaq');
 const digest=bytes=>createHash('sha256').update(bytes).digest('hex');
 export async function prepareNuugaatsiaqEditorData(directory){

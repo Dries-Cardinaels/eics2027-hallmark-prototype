@@ -79,3 +79,7 @@ The editor has no automated browser test. `tests/browser-check.js`, `npm run bui
 The numbers the paper reports for Connecting Ridge come from `node ../demo/research/paper-numbers.mjs` and are cross-checked by `uv run --with numpy python ../demo/research/paper-numbers-crosscheck.py` (run from `prototype/`).
 
 The earlier standalone page remains at `dist/hallmark-prototype.html` and the design variants at `mockups/terrain-pipeline/`. See [the earlier interface](docs/previous-interface.md), [limitations](docs/limitations.md) and [the core query interface](docs/api.md).
+
+## Original supplier downloads
+
+Run `npm ci --include=dev`, `npm run build`, then `npm test`. The retained-fixture tests need no external downloads. To also run the raw Nuugaatsiaq extraction check, set `HALLMARK_NUUGAATSIAQ_SOURCE` to the directory containing `dem-2km.tif`, `mask-2km.tif`, and `matchtag-2km.tif`. Alternatively place those files in ignored `local-data/nuugaatsiaq-20170619/`.

@@ -8,7 +8,7 @@ test('combined assessment remains while selecting a branch updates evidence and 
   assert.equal(t.h.current().selection.node,'combined');assert.equal(t.h.current().evaluation,ev);assert.equal(e.get('map-content').firstChild,values);
   assert.equal((e.get('sources').innerHTML.match(/data-source="true"/g)||[]).length,count);
   assert.match(e.get('selection-evidence').innerHTML,new RegExp(`${flagged}/${count} inputs flagged suspicious`));
-  assert.match(e.get('map-secondary-title').textContent,new RegExp(branch,'i'));
+  assert.match(e.get('map-secondary-title').textContent,new RegExp(branch==='roughness'?'height spread':branch,'i'));
  }
 });
 test('value cards change the inspected quantity and preserve raw numerical results',()=>{

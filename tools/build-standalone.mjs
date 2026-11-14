@@ -5,13 +5,32 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { dirname, join, resolve, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
+import {parse} from 'acorn';
+
+/** Remove comments from emitted modules without changing JavaScript semantics.
+ * @param {string} source Original module source.
+ * @pre Source is a valid ECMAScript module.
+ * @post Original files are unchanged; line terminators remain intact.
+ * @return {string} Source with comments replaced by whitespace.
+ * @throws {SyntaxError} If the module cannot be parsed.
+ */
+function stripComments(source) {
+  const comments=[];
+  parse(source,{ecmaVersion:'latest',sourceType:'module',onComment:comments});
+  let result='',offset=0;
+  for(const {start,end} of comments){
+    result+=source.slice(offset,start)+' '+source.slice(start,end).replace(/[^\r\n]/g,'');
+    offset=end;
+  }
+  return result+source.slice(offset);
+}
 import { TERRAIN_PREVIEWS } from '../src/fixtures/terrain-previews.js';
 import { LUNAR_DATA } from '../src/fixtures/lunar-data.js';
 import { EARTH_DATA } from '../src/fixtures/earth-data.js';
 import { EARTH_DIEPENBEEK_DATA } from '../src/fixtures/earth-diepenbeek-data.js';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const ORDER = ['src/core/origins.js', 'src/core/quality.js', 'src/core/illumination.js', 'src/core/sample-counts.js', 'src/core/height-evidence.js', 'src/core/operations.js', 'src/core/pipeline.js', 'src/core/query.js', 'src/core/index.js', 'src/fixtures/lunar-data.js', 'src/fixtures/lroc-data.js', 'src/fixtures/earth-data.js', 'src/fixtures/earth-diepenbeek-data.js', 'src/fixtures/lunar-sun-data.js', 'src/fixtures/terrain.js', 'src/ui/preview-loader.js', 'src/ui/overview.js', 'src/ui/map-geometry.js', 'src/ui/sun-profile.js', 'src/ui/evidence.js', 'src/ui/terrain-experiment.js', 'src/ui/app.js'];
+const ORDER = ['src/core/origins.js', 'src/core/quality.js', 'src/core/illumination.js', 'src/core/sample-counts.js', 'src/core/height-evidence.js', 'src/core/operations.js', 'src/core/pipeline.js', 'src/core/query.js', 'src/core/diagnostic.js', 'src/core/index.js', 'src/fixtures/lunar-data.js', 'src/fixtures/lroc-data.js', 'src/fixtures/earth-data.js', 'src/fixtures/earth-diepenbeek-data.js', 'src/fixtures/lunar-sun-data.js', 'src/fixtures/terrain.js', 'src/ui/preview-loader.js', 'src/ui/overview.js', 'src/ui/map-geometry.js', 'src/ui/sun-profile.js', 'src/ui/evidence.js', 'src/ui/terrain-experiment.js', 'src/ui/app.js'];
 const id = (path) => 'M_' + path.replace(/[^a-z0-9]/gi, '_');
 const target = (from, spec) => relative(root, resolve(dirname(join(root, from)), spec));
 
@@ -48,7 +67,7 @@ writeFileSync(join(terrainDir,'three-controls.js'),readFileSync(join(root,'node_
 writeFileSync(join(terrainDir,'THREE-LICENSE.txt'),readFileSync(join(root,'node_modules/three/LICENSE')));
 
 const modules = ORDER.map(path => {
-  let src = readFileSync(join(root, path), 'utf8');
+  let src = stripComments(readFileSync(join(root, path), 'utf8'));
   const exported = [];
   src = src.replace(/^import \* as (\w+) from '([^']+)';$/gm, (_, name, spec) => `const ${name} = ${id(target(path, spec))};`);
   src = src.replace(/^import \{([^}]+)\} from '([^']+)';$/gm, (_, names, spec) => `const {${names}} = ${id(target(path, spec))};`);

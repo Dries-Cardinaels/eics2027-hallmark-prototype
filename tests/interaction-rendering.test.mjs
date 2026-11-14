@@ -64,5 +64,5 @@ test('Full record is built on demand and always describes the current selection 
   t.h.select({node:'roughness',cell:{row:10,col:12}});
   assert.equal(t.counts['inspect.writes']||0,0);
   t.elements.get('show-details').listeners.click();
-  assert.match(t.elements.get('inspect').innerHTML,/Roughness · analysis cell row 10, col 12/);
+  assert.match(t.elements.get('inspect').innerHTML,/Height spread · analysis cell row 10, col 12/);
 });

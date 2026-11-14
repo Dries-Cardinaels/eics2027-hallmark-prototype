@@ -92,7 +92,7 @@ test('compact inspector links criterion cards to evidence without leaving the ov
   assert.equal(t.h.current().evaluation,before);
   assert.equal(t.document.activeElement.dataset.criterion,branch);
   assert.match(t.elements.get('results').innerHTML,new RegExp(`data-criterion="${branch}" aria-pressed="true"`));
-  assert.match(t.elements.get('src-h').textContent,new RegExp(branch));
+  assert.match(t.elements.get('src-h').textContent,new RegExp(branch==='roughness'?'height spread':branch));
   assert.equal((t.elements.get('sources').innerHTML.match(/data-source="true"/g)||[]).length,branch==='slope'?8:25);
  }
  assert.doesNotMatch(t.elements.get('sources').innerHTML,/>P<|>Q14</);
